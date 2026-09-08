@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conscious Realty | Dream, Live, Aware</title>
+<meta name="description" content="Conscious Realty helps you discover thoughtfully selected properties designed around the way you dream, live and grow.">
+<meta name="keywords" content="Conscious Realty, luxury real estate, premium properties, Gurugram, Pune, Goa, Bangalore, Bhiwadi, Ranikhet, Nainital, property consultation, property investment">
+<meta name="author" content="Conscious Realty">
+<link rel="canonical" href="https://www.consciousrealty.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Conscious Realty | Dream, Live, Aware">
+<meta property="og:description" content="Conscious Realty helps you discover thoughtfully selected properties designed around the way you dream, live and grow.">
+<meta property="og:url" content="https://www.consciousrealty.com/">
+<meta property="og:image" content="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b0b0b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   CONSCIOUS REALTY — STYLES
+   1 Tokens  2 Base  3 Type  4 Layout  5 Buttons  6 Nav  7 Hero
+   8 Ticker  9 Intro  10 Properties  11 Gallery  12 Featured
+   13 Services  14 Why  15 Manifesto  16 CTA  17 Contact
+   18 Footer  19 Utilities  20 Responsive
+   ============================================================ */
+
+/* 1. TOKENS ---------------------------------------------------- */
+:root{
+  /* Black & white premium palette */
+  --charcoal:#0b0b0b;
+  --charcoal-2:#141414;
+  --charcoal-3:#1e1e1e;
+  --ivory:#f6f6f4;
+  --ivory-2:#ededec;
+  --ivory-3:#e2e2e0;
+  /* "gold" tokens repurposed as platinum/silver accents (kept for compatibility) */
+  --gold:#c9c9c9;
+  --gold-soft:#f2f2f2;
+  --gold-deep:#6f6f6f;
+  --on-dark:#f2f2f2;
+  --on-dark-2:rgba(242,242,242,.64);
+  --on-dark-3:rgba(242,242,242,.4);
+  --on-light:#111111;
+  --on-light-2:rgba(17,17,17,.6);
+  --line-dark:rgba(242,242,242,.14);
+  --line-light:rgba(17,17,17,.14);
+
+  --font-display:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --font-body:"Manrope","Helvetica Neue",Arial,sans-serif;
+
+  --container:1280px;
+  --gutter:clamp(20px,5vw,64px);
+  --section:clamp(96px,12vw,170px);
+  --radius:2px;
+  --radius-lg:6px;
+
+  --ease:cubic-bezier(.22,1,.36,1);
+  --t-fast:.25s var(--ease);
+  --t-med:.55s var(--ease);
+  --t-slow:1s var(--ease);
+  --shadow:0 30px 70px -30px rgba(0,0,0,.55);
+}
+
+/* 2. BASE ------------------------------------------------------ */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;font-family:var(--font-body);font-weight:300;font-size:1rem;line-height:1.7;
+  color:var(--on-dark);background:var(--charcoal);overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+/* subtle film grain over the whole page */
+body::after{
+  content:"";position:fixed;inset:0;z-index:999;pointer-events:none;opacity:.05;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+ul,ol{margin:0;padding:0;list-style:none}
+dl,dd,p,h1,h2,h3,figure{margin:0}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.skip-link{position:absolute;top:-60px;left:16px;padding:10px 16px;background:var(--gold);color:var(--charcoal);z-index:1000;transition:top var(--t-fast)}
+.skip-link:focus{top:16px}
+
+/* image fallback: if a photo fails to load, show a soft gradient */
+.img-frame{position:relative;overflow:hidden;background:linear-gradient(135deg,#262626,#141414)}
+.img-frame img{width:100%;height:100%;object-fit:cover}
+.img-frame.is-broken img{opacity:0}
+.img-frame.is-broken::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(ellipse at 30% 20%,rgba(255,255,255,.14),transparent 55%),
+  linear-gradient(160deg,#282828,#141414)}
+.img-frame.is-broken::after{content:"Conscious Realty";position:absolute;inset:0;display:grid;place-items:center;
+  font-family:var(--font-display);font-size:1.1rem;letter-spacing:.3em;text-transform:uppercase;color:var(--on-dark-3)}
+
+/* 3. TYPE ------------------------------------------------------ */
+.h2{font-family:var(--font-display);font-weight:400;font-size:clamp(2.4rem,4.8vw,4rem);line-height:1.05;letter-spacing:-.012em}
+.h3{font-family:var(--font-display);font-weight:500;font-size:1.6rem;line-height:1.2}
+.lead{font-size:1.12rem;line-height:1.75}
+.eyebrow{display:flex;align-items:center;gap:14px;font-size:.7rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor;opacity:.7}
+.eyebrow--center{justify-content:center}
+.eyebrow--center::after{content:"";width:28px;height:1px;background:currentColor;opacity:.7}
+em.serif{font-family:var(--font-display);font-style:italic;font-weight:400}
+
+/* 4. LAYOUT ---------------------------------------------------- */
+.container{width:min(100% - var(--gutter)*2,var(--container));margin-inline:auto}
+.section{padding-block:var(--section);position:relative}
+.section--ivory{background:var(--ivory);color:var(--on-light)}
+.section--ivory .eyebrow{color:var(--gold-deep)}
+.section--ivory p:not(.eyebrow){color:var(--on-light-2)}
+.section--ivory .h2,.section--ivory .h3{color:var(--on-light)}
+.section-head{display:grid;grid-template-columns:1.2fr .9fr;gap:40px;align-items:end;margin-bottom:64px}
+.section-head__sub{font-size:1.08rem;color:var(--on-dark-2);max-width:42ch;justify-self:end;padding-bottom:6px}
+.section--ivory .section-head__sub{color:var(--on-light-2)}
+
+/* 5. BUTTONS --------------------------------------------------- */
+.btn{
+  position:relative;display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:54px;padding:0 34px;
+  font-size:.78rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;border-radius:var(--radius);
+  border:1px solid transparent;overflow:hidden;white-space:nowrap;
+  transition:color var(--t-fast),border-color var(--t-fast),transform var(--t-fast),background var(--t-fast);
+}
+.btn::before{content:"";position:absolute;inset:0;transform:scaleX(0);transform-origin:left;transition:transform .55s var(--ease);z-index:-1}
+.btn:active{transform:translateY(1px)}
+.btn--gold{background:var(--gold);color:var(--charcoal);border-color:var(--gold);z-index:0}
+.btn--gold::before{background:var(--gold-soft)}
+.btn--gold:hover::before{transform:scaleX(1)}
+.btn--ghost{color:var(--on-dark);border-color:rgba(242,242,242,.38);z-index:0}
+.btn--ghost::before{background:rgba(242,242,242,.08)}
+.btn--ghost:hover{border-color:var(--on-dark)}
+.btn--ghost:hover::before{transform:scaleX(1)}
+.btn--dark{background:var(--charcoal);color:var(--ivory);border-color:var(--charcoal);z-index:0}
+.btn--dark::before{background:var(--charcoal-3)}
+.btn--dark:hover::before{transform:scaleX(1)}
+.btn--outline{color:var(--on-dark);border-color:rgba(242,242,242,.28);min-height:42px;padding:0 22px;font-size:.7rem}
+.btn--outline:hover{border-color:var(--gold);color:var(--gold-soft)}
+.btn svg{width:16px;height:16px;transition:transform var(--t-fast)}
+.btn:hover svg{transform:translateX(4px)}
+.link-arrow{display:inline-flex;align-items:center;gap:10px;font-size:.74rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;padding-bottom:4px;border-bottom:1px solid var(--gold);transition:color var(--t-fast),gap var(--t-fast)}
+.link-arrow:hover{gap:16px}
+.link-arrow svg{width:14px;height:14px}
+
+/* 6. NAV ------------------------------------------------------- */
+.nav{position:fixed;inset:0 0 auto 0;z-index:100;padding-block:24px;border-bottom:1px solid transparent;
+  transition:padding var(--t-med),background var(--t-med),border-color var(--t-med)}
+.nav.is-scrolled{padding-block:14px;background:rgba(11,11,11,.72);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);border-bottom-color:var(--line-dark)}
+.nav__inner{display:flex;align-items:center;gap:40px}
+.nav__brand{display:inline-flex;align-items:center;gap:14px;margin-right:auto}
+.nav__mark{position:relative;width:14px;height:14px}
+.nav__mark::before,.nav__mark::after{content:"";position:absolute;inset:0;border:1px solid var(--gold);transform:rotate(45deg)}
+.nav__mark::after{inset:4px;background:var(--gold);border:0}
+.nav__name{font-family:var(--font-display);font-weight:500;font-size:1.2rem;letter-spacing:.22em;text-transform:uppercase}
+.nav__links{display:flex;gap:36px}
+.nav__link{position:relative;font-size:.76rem;font-weight:500;letter-spacing:.1em;color:var(--on-dark-2);padding-block:6px;transition:color var(--t-fast)}
+.nav__link::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform var(--t-med)}
+.nav__link:hover,.nav__link.is-active{color:var(--on-dark)}
+.nav__link.is-active::after{transform:scaleX(1)}
+.nav__toggle{display:none;width:44px;height:44px;flex-direction:column;align-items:center;justify-content:center;gap:7px}
+.nav__toggle span{display:block;width:26px;height:1px;background:var(--on-dark);transition:transform var(--t-med)}
+.nav__toggle.is-open span:nth-child(1){transform:translateY(4px) rotate(45deg)}
+.nav__toggle.is-open span:nth-child(2){transform:translateY(-4px) rotate(-45deg)}
+
+.mobile-menu{position:fixed;inset:0;z-index:90;background:var(--charcoal);display:flex;flex-direction:column;justify-content:space-between;
+  padding:120px var(--gutter) 40px;opacity:0;visibility:hidden;clip-path:inset(0 0 100% 0);
+  transition:clip-path .75s var(--ease),opacity .4s,visibility 0s .75s;overflow:hidden}
+.mobile-menu::before{content:"";position:absolute;right:-20%;bottom:-10%;width:70vw;height:70vw;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.1),transparent 65%);pointer-events:none}
+.mobile-menu.is-open{opacity:1;visibility:visible;clip-path:inset(0 0 0 0);transition:clip-path .75s var(--ease),opacity .3s}
+.mobile-menu__links{display:flex;flex-direction:column;gap:4px;position:relative}
+.mobile-menu__links a{display:flex;align-items:baseline;gap:18px;font-family:var(--font-display);font-size:clamp(2.2rem,9vw,3.4rem);line-height:1.15;padding-block:8px;border-bottom:1px solid var(--line-dark);opacity:0;transform:translateY(18px);transition:opacity .5s var(--ease),transform .6s var(--ease)}
+.mobile-menu__links a small{font-family:var(--font-body);font-size:.66rem;letter-spacing:.2em;color:var(--gold)}
+.mobile-menu.is-open .mobile-menu__links a{opacity:1;transform:none}
+.mobile-menu.is-open .mobile-menu__links a:nth-child(1){transition-delay:.15s}
+.mobile-menu.is-open .mobile-menu__links a:nth-child(2){transition-delay:.2s}
+.mobile-menu.is-open .mobile-menu__links a:nth-child(3){transition-delay:.25s}
+.mobile-menu.is-open .mobile-menu__links a:nth-child(4){transition-delay:.3s}
+.mobile-menu.is-open .mobile-menu__links a:nth-child(5){transition-delay:.35s}
+.mobile-menu.is-open .mobile-menu__links a:nth-child(6){transition-delay:.4s}
+.mobile-menu__foot{display:flex;flex-direction:column;gap:18px;align-items:flex-start;position:relative}
+.mobile-menu__phone{color:var(--on-dark-2);letter-spacing:.06em}
+body.menu-open{overflow:hidden}
+
+/* 7. HERO ------------------------------------------------------ */
+.hero{position:relative;min-height:100svh;display:grid;align-items:end;overflow:hidden;isolation:isolate}
+.hero__media{position:absolute;inset:0;z-index:-2}
+.hero__media img{width:100%;height:100%;object-fit:cover;transform:scale(1.05);animation:heroZoom 30s var(--ease) forwards}
+@keyframes heroZoom{to{transform:scale(1.16)}}
+.hero__overlay{position:absolute;inset:0;z-index:-1;background:
+  linear-gradient(180deg,rgba(11,11,11,.55) 0%,rgba(11,11,11,.1) 30%,rgba(11,11,11,.35) 60%,rgba(11,11,11,.92) 100%),
+  linear-gradient(90deg,rgba(11,11,11,.55),transparent 65%)}
+.hero__inner{display:grid;grid-template-columns:1.4fr .9fr;gap:40px;align-items:end;padding-bottom:clamp(90px,12vh,140px)}
+.hero__label{font-size:.7rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:28px;display:flex;align-items:center;gap:14px;opacity:0;animation:fadeUp 1s var(--ease) .3s forwards}
+.hero__label::before{content:"";width:40px;height:1px;background:var(--gold)}
+.hero__title{font-family:var(--font-display);font-weight:300;font-size:clamp(3.6rem,10.5vw,9rem);line-height:.95;letter-spacing:-.02em;display:flex;flex-wrap:wrap;gap:0 .26em;margin-bottom:32px}
+.hero__word{display:inline-block;opacity:0;transform:translateY(46px);animation:fadeUp 1.3s var(--ease) forwards}
+.hero__word:nth-child(1){animation-delay:.5s}
+.hero__word:nth-child(2){animation-delay:.65s;font-style:italic}
+.hero__word:nth-child(3){animation-delay:.8s;color:var(--gold-soft)}
+.hero__text{max-width:44ch;font-size:clamp(1.02rem,1.4vw,1.2rem);line-height:1.7;color:var(--on-dark-2);margin-bottom:42px;opacity:0;animation:fadeUp 1s var(--ease) 1.05s forwards}
+.hero__actions{display:flex;flex-wrap:wrap;gap:14px;opacity:0;animation:fadeUp 1s var(--ease) 1.25s forwards}
+
+/* floating property snapshot card */
+.hero__card{justify-self:end;width:min(100%,360px);padding:14px;background:rgba(11,11,11,.45);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border:1px solid rgba(242,242,242,.16);border-radius:var(--radius-lg);box-shadow:var(--shadow);opacity:0;animation:fadeUp 1.2s var(--ease) 1.5s forwards}
+.hero__card .img-frame{aspect-ratio:16/10;border-radius:3px}
+.hero__card-body{padding:18px 8px 8px;display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
+.hero__card-body small{display:block;font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--on-dark-3);margin-bottom:4px}
+.hero__card-body strong{font-family:var(--font-display);font-weight:500;font-size:1.35rem;line-height:1.1}
+.hero__card-body span{font-family:var(--font-display);font-size:1.2rem;color:var(--gold-soft);white-space:nowrap}
+
+.hero__side{position:absolute;left:var(--gutter);top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;color:var(--on-dark-3);opacity:0;animation:fadeUp 1s var(--ease) 1.9s forwards}
+.hero__scroll{position:absolute;right:var(--gutter);bottom:36px;display:flex;align-items:center;gap:14px;font-size:.64rem;letter-spacing:.28em;text-transform:uppercase;color:var(--on-dark-2);opacity:0;animation:fadeUp 1s var(--ease) 1.8s forwards}
+.hero__scroll i{width:1px;height:60px;background:linear-gradient(to bottom,var(--gold),transparent);position:relative;overflow:hidden}
+.hero__scroll i::after{content:"";position:absolute;inset:0;background:var(--charcoal);animation:scrollLine 2.4s var(--ease) infinite}
+@keyframes scrollLine{0%{transform:translateY(-100%)}55%,100%{transform:translateY(100%)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+
+/* 8. TICKER ---------------------------------------------------- */
+.ticker{border-block:1px solid var(--line-dark);padding-block:18px;overflow:hidden;background:var(--charcoal)}
+.ticker__track{display:flex;width:max-content;animation:ticker 40s linear infinite}
+.ticker:hover .ticker__track{animation-play-state:paused}
+.ticker__item{display:flex;align-items:center;gap:36px;padding-right:36px;font-family:var(--font-display);font-size:1.25rem;letter-spacing:.2em;text-transform:uppercase;color:var(--on-dark-2);white-space:nowrap}
+.ticker__item i{width:6px;height:6px;background:var(--gold);transform:rotate(45deg)}
+@keyframes ticker{to{transform:translateX(-50%)}}
+
+/* 9. INTRO ----------------------------------------------------- */
+.intro__grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(48px,8vw,130px);align-items:center}
+.intro__media{position:relative;padding-bottom:22%;padding-right:18%}
+.intro__img-main{aspect-ratio:4/5;border-radius:var(--radius-lg)}
+.intro__img-main img{transition:transform 1.4s var(--ease)}
+.intro__media:hover .intro__img-main img{transform:scale(1.04)}
+.intro__img-small{position:absolute;right:0;bottom:0;width:52%;aspect-ratio:1;border-radius:var(--radius-lg);box-shadow:var(--shadow);border:8px solid var(--charcoal)}
+.intro__frame{position:absolute;left:-18px;top:-18px;width:60%;height:60%;border:1px solid rgba(242,242,242,.35);pointer-events:none;z-index:-1}
+.intro__body .h2{margin-bottom:28px;max-width:15ch}
+.intro__body .lead{margin-bottom:18px;color:var(--on-dark)}
+.intro__body>p:not(.lead):not(.eyebrow){color:var(--on-dark-2);max-width:52ch}
+.intro__stats{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:52px;padding-top:34px;border-top:1px solid var(--line-dark)}
+.intro__stats dt{font-family:var(--font-display);font-size:1.6rem;font-weight:500;color:var(--gold-soft);margin-bottom:6px;font-style:italic}
+.intro__stats dd{font-size:.86rem;color:var(--on-dark-2);line-height:1.55}
+
+/* 10. PROPERTIES ----------------------------------------------- */
+.properties{overflow:hidden}
+.properties::before{content:"PROPERTIES";position:absolute;right:-.05em;top:.2em;font-family:var(--font-display);font-size:clamp(6rem,18vw,18rem);line-height:1;letter-spacing:.02em;color:rgba(17,17,17,.035);pointer-events:none;user-select:none}
+.filters{display:flex;flex-wrap:wrap;align-items:end;gap:18px;padding:24px 28px;border:1px solid var(--line-light);border-radius:var(--radius-lg);background:rgba(255,255,255,.5);margin-bottom:22px;position:relative}
+.filter{flex:1 1 180px}
+.filter label,.field label{display:block;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--on-light-2);margin-bottom:8px}
+.select{position:relative}
+.select::after{content:"";position:absolute;right:16px;top:50%;width:8px;height:8px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:translateY(-70%) rotate(45deg);pointer-events:none;opacity:.6}
+.select select,.field input,.field textarea{width:100%;min-height:50px;padding:10px 40px 10px 14px;font:inherit;font-weight:400;color:var(--on-light);background:transparent;border:1px solid var(--line-light);border-radius:var(--radius);appearance:none;-webkit-appearance:none;transition:border-color var(--t-fast),background var(--t-fast)}
+.field input,.field textarea{padding-right:14px}
+.select select:hover,.field input:hover,.field textarea:hover{border-color:rgba(17,17,17,.35)}
+.select select:focus,.field input:focus,.field textarea:focus{outline:none;border-color:var(--gold);background:rgba(255,255,255,.6)}
+.select select option{color:var(--on-light);background:var(--ivory)}
+.filters__reset{min-height:50px;padding:0 12px;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-light-2);border-bottom:1px solid transparent;transition:color var(--t-fast),border-color var(--t-fast)}
+.filters__reset:hover{color:var(--on-light);border-bottom-color:var(--on-light)}
+.properties__count{font-size:.78rem;letter-spacing:.08em;margin-bottom:30px;min-height:1.4em}
+
+.property-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;position:relative}
+.property{display:flex;flex-direction:column;background:#fff;border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 1px 0 var(--line-light);
+  transition:opacity .45s var(--ease),transform .55s var(--ease),box-shadow var(--t-med)}
+.property:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.property.is-hidden{display:none}
+.property.is-entering{opacity:0;transform:translateY(16px)}
+.property__media{aspect-ratio:4/3}
+.property__media img{transition:transform 1.3s var(--ease)}
+.property:hover .property__media img{transform:scale(1.07)}
+.property__media::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(11,11,11,.55),transparent 55%);opacity:.9}
+.property__badge{position:absolute;top:16px;left:16px;z-index:1;padding:7px 12px;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ivory);background:rgba(11,11,11,.5);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(242,242,242,.2);border-radius:var(--radius)}
+.property__price{position:absolute;left:18px;bottom:16px;z-index:1;color:var(--ivory)}
+.property__price small{display:block;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(242,242,242,.7)}
+.property__price strong{font-family:var(--font-display);font-size:1.6rem;font-weight:500;line-height:1.1}
+.property__body{padding:26px 28px 28px;display:flex;flex-direction:column;flex:1}
+.property__meta{display:flex;justify-content:space-between;gap:12px;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--on-light-2);margin-bottom:10px}
+.property__name{font-family:var(--font-display);font-size:1.75rem;font-weight:500;line-height:1.12;color:var(--on-light);margin-bottom:10px}
+.property__desc{font-size:.92rem;color:var(--on-light-2);margin-bottom:24px}
+.property__foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:18px;border-top:1px solid var(--line-light)}
+.property__specs{display:flex;gap:18px;font-size:.78rem;color:var(--on-light-2)}
+.property__specs b{font-weight:500;color:var(--on-light)}
+.property__link{color:var(--on-light)}
+.property__link:hover{color:var(--gold-deep)}
+.properties__empty{text-align:center;padding:64px 20px;border:1px dashed var(--line-light);border-radius:var(--radius-lg)}
+.properties__empty .h3{margin-bottom:10px}
+.properties__empty p{max-width:46ch;margin-inline:auto}
+.properties__empty .btn{margin-top:26px}
+
+/* 11. GALLERY -------------------------------------------------- */
+.gallery{padding-block:var(--section);background:var(--charcoal)}
+.gallery__head{text-align:center;max-width:64ch;margin:0 auto 64px}
+.gallery__head .h2{margin-bottom:18px}
+.gallery__head p{color:var(--on-dark-2);font-size:1.08rem}
+.gallery__grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:120px;gap:16px}
+.gallery__item{border-radius:var(--radius-lg);position:relative}
+.gallery__item:nth-child(1){grid-column:span 5;grid-row:span 4}
+.gallery__item:nth-child(2){grid-column:span 4;grid-row:span 2}
+.gallery__item:nth-child(3){grid-column:span 3;grid-row:span 2}
+.gallery__item:nth-child(4){grid-column:span 3;grid-row:span 2}
+.gallery__item:nth-child(5){grid-column:span 4;grid-row:span 2}
+.gallery__item img{transition:transform 1.4s var(--ease),filter 1s var(--ease);filter:saturate(.95)}
+.gallery__item:hover img{transform:scale(1.05);filter:saturate(1.05)}
+.gallery__cap{position:absolute;left:20px;bottom:18px;z-index:1;display:flex;flex-direction:column;gap:2px;text-shadow:0 2px 20px rgba(0,0,0,.6)}
+.gallery__cap span{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft)}
+.gallery__cap b{font-family:var(--font-display);font-weight:400;font-size:1.5rem;line-height:1.1}
+.gallery__item::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(11,11,11,.6),transparent 50%);pointer-events:none}
+
+/* 12. FEATURED ------------------------------------------------- */
+.featured{position:relative;min-height:96vh;display:flex;align-items:center;overflow:hidden;isolation:isolate}
+.featured__media{position:absolute;inset:-14% 0;z-index:-2;will-change:transform}
+.featured__media img{width:100%;height:100%;object-fit:cover}
+.featured__overlay{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(11,11,11,.78) 0%,rgba(11,11,11,.4) 55%,rgba(11,11,11,.15) 100%)}
+.featured__content{padding-block:clamp(90px,10vw,130px);display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px}
+.featured__panel{max-width:600px;padding:clamp(34px,4.5vw,56px);background:rgba(11,11,11,.4);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(242,242,242,.14);border-radius:var(--radius-lg);box-shadow:var(--shadow)}
+.featured__title{font-family:var(--font-display);font-weight:300;font-size:clamp(2.4rem,4.4vw,3.6rem);line-height:1.08;margin-bottom:18px}
+.featured__text{color:var(--on-dark-2);margin-bottom:30px;max-width:46ch}
+.featured__specs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px 22px;padding:24px 0;margin-bottom:32px;border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark)}
+.featured__specs dt{font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--on-dark-3);margin-bottom:4px}
+.featured__specs dd{font-family:var(--font-display);font-size:1.3rem;font-weight:500}
+.featured__num{font-family:var(--font-display);font-size:clamp(5rem,10vw,9rem);line-height:.8;color:rgba(242,242,242,.18);font-style:italic;user-select:none}
+
+/* 13. SERVICES ------------------------------------------------- */
+.services__grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line-dark);border-left:1px solid var(--line-dark)}
+.service{position:relative;padding:44px 34px 48px;border-right:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);overflow:hidden;isolation:isolate;min-height:360px;display:flex;flex-direction:column}
+.service__bg{position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .8s var(--ease),transform 1.4s var(--ease);transform:scale(1.06)}
+.service__bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.45)}
+.service:hover .service__bg{opacity:1;transform:scale(1)}
+.service__icon{display:inline-flex;width:54px;height:54px;align-items:center;justify-content:center;color:var(--gold);border:1px solid var(--line-dark);border-radius:50%;margin-bottom:auto;transition:border-color var(--t-med),color var(--t-med),background var(--t-med)}
+.service:hover .service__icon{border-color:var(--gold);color:var(--charcoal);background:var(--gold)}
+.service__icon svg{width:26px;height:26px}
+.service .h3{margin:40px 0 12px}
+.service p{font-size:.95rem;color:var(--on-dark-2)}
+.service__idx{position:absolute;right:26px;top:26px;font-family:var(--font-display);font-size:1.1rem;color:var(--on-dark-3);font-style:italic}
+
+/* 14. WHY ------------------------------------------------------ */
+.why__grid{display:grid;grid-template-columns:1fr 1.45fr;gap:clamp(48px,8vw,130px)}
+.why__intro{position:sticky;top:120px;align-self:start}
+.why__intro .h2{margin-bottom:22px}
+.why__intro .lead{max-width:34ch;margin-bottom:36px}
+.why__img{aspect-ratio:4/5;border-radius:var(--radius-lg);max-width:380px}
+.principle{display:grid;grid-template-columns:90px 1fr;gap:26px;padding:40px 0;border-top:1px solid var(--line-light);transition:padding-left var(--t-med)}
+.principle:hover{padding-left:10px}
+.principle:last-child{border-bottom:1px solid var(--line-light)}
+.principle__num{font-family:var(--font-display);font-size:3rem;font-weight:300;line-height:1;color:var(--gold-deep);font-style:italic}
+.principle .h3{margin-bottom:8px;font-size:1.85rem}
+.principle p{max-width:44ch;font-size:1.02rem}
+
+/* 15. MANIFESTO ------------------------------------------------ */
+.manifesto{position:relative;padding-block:clamp(130px,20vw,260px);overflow:hidden;isolation:isolate;text-align:center}
+.manifesto__bg{position:absolute;inset:-14% 0;z-index:-2;will-change:transform}
+.manifesto__bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.32)}
+.manifesto::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at center,rgba(11,11,11,.15),rgba(11,11,11,.88) 75%)}
+.manifesto__title{font-family:var(--font-display);font-weight:300;font-size:clamp(4.4rem,16vw,14rem);line-height:.9;letter-spacing:.02em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;margin-bottom:60px}
+.manifesto__line{display:block;overflow:hidden;padding:.04em .1em}
+.manifesto__line>span{display:block;transform:translateY(112%);transition:transform 1.3s var(--ease)}
+.manifesto__line:nth-child(2)>span{transition-delay:.12s;font-style:italic}
+.manifesto__line:nth-child(3)>span{transition-delay:.24s;color:var(--gold-soft)}
+.manifesto.is-visible .manifesto__line>span{transform:translateY(0)}
+.manifesto__copy{display:inline-grid;gap:2px;padding:28px 40px;border-block:1px solid rgba(242,242,242,.35)}
+.manifesto__copy p{font-family:var(--font-display);font-size:clamp(1.25rem,2.2vw,1.75rem);line-height:1.5;color:var(--on-dark-2)}
+
+/* 16. CTA ------------------------------------------------------ */
+.cta{position:relative;overflow:hidden;isolation:isolate}
+.cta__bg{position:absolute;inset:0;z-index:-2}
+.cta__bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.35)}
+.cta::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,var(--charcoal),rgba(11,11,11,.6) 40%,rgba(11,11,11,.6) 60%,var(--charcoal))}
+.cta__inner{text-align:center}
+.cta__title{font-family:var(--font-display);font-weight:300;font-size:clamp(2.6rem,5.5vw,5rem);line-height:1.02;margin-bottom:20px}
+.cta__text{color:var(--on-dark-2);font-size:1.12rem;margin-bottom:44px}
+.cta__actions{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+
+/* 17. CONTACT -------------------------------------------------- */
+.contact__grid{display:grid;grid-template-columns:1fr 1.35fr;gap:clamp(48px,8vw,130px);align-items:start}
+.contact__tag{font-family:var(--font-display);font-style:italic;font-size:1.5rem;margin:8px 0 44px}
+.contact__list{display:grid;gap:24px}
+.contact__list dt{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--on-light-2);margin-bottom:4px}
+.contact__list dd a{font-size:1.08rem;color:var(--on-light);border-bottom:1px solid transparent;transition:border-color var(--t-fast);word-break:break-word}
+.contact__list dd a:hover{border-bottom-color:var(--gold)}
+.contact__img{margin-top:48px;aspect-ratio:16/10;border-radius:var(--radius-lg)}
+.form{position:relative;padding:clamp(30px,4.5vw,52px);background:#fff;border:1px solid var(--line-light);border-radius:var(--radius-lg);display:grid;gap:22px;box-shadow:0 40px 80px -50px rgba(17,17,17,.35)}
+.form__row{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.field{display:flex;flex-direction:column}
+.field textarea{resize:vertical;min-height:130px}
+.field.is-invalid input,.field.is-invalid select,.field.is-invalid textarea{border-color:#a34b3b}
+.field__error{font-size:.78rem;color:#a34b3b;margin-top:6px;min-height:1em}
+.form__submit{justify-self:start}
+.form__success{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px;background:#fff;border-radius:var(--radius-lg);animation:fadeUp .6s var(--ease)}
+.form__success[hidden]{display:none}
+.form__check{width:68px;height:68px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--gold);border-radius:50%;color:var(--gold-deep);margin-bottom:22px}
+.form__check svg{width:28px;height:28px}
+.form__success .h3{margin-bottom:10px}
+.form__success p{max-width:40ch}
+.form__again{margin-top:26px;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-light);border-bottom:1px solid var(--gold);padding-bottom:3px}
+
+/* 18. FOOTER --------------------------------------------------- */
+.footer{padding-top:80px;border-top:1px solid var(--line-dark);position:relative;overflow:hidden}
+.footer__word{font-family:var(--font-display);font-size:clamp(3rem,11vw,10rem);line-height:1;letter-spacing:.06em;text-transform:uppercase;color:rgba(242,242,242,.05);white-space:nowrap;text-align:center;margin-bottom:-.15em;user-select:none;pointer-events:none}
+.footer__grid{display:grid;grid-template-columns:1.4fr 1fr 1.2fr .8fr;gap:40px;padding-block:56px;border-top:1px solid var(--line-dark)}
+.footer__logo{display:inline-flex;align-items:center;gap:14px;font-family:var(--font-display);font-size:1.3rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase}
+.footer__tag{font-family:var(--font-display);font-style:italic;color:var(--on-dark-2);margin-top:8px;font-size:1.1rem}
+.footer h4{margin:0 0 14px;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--on-dark-3);font-weight:500}
+.footer__links,.footer__contact,.footer__social{display:flex;flex-direction:column;gap:10px}
+.footer__links a,.footer__contact a,.footer__social a{font-size:.88rem;color:var(--on-dark-2);transition:color var(--t-fast);width:fit-content;word-break:break-word}
+.footer__links a:hover,.footer__contact a:hover,.footer__social a:hover{color:var(--gold-soft)}
+.footer__bottom{padding-block:22px;border-top:1px solid var(--line-dark);font-size:.74rem;letter-spacing:.06em;color:var(--on-dark-3);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+/* 19. UTILITIES ------------------------------------------------ */
+.to-top{position:fixed;right:24px;bottom:24px;z-index:80;width:50px;height:50px;display:inline-flex;align-items:center;justify-content:center;color:var(--charcoal);background:var(--gold);border-radius:50%;box-shadow:var(--shadow);opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity var(--t-med),transform var(--t-med),visibility 0s .5s,background var(--t-fast)}
+.to-top.is-visible{opacity:1;visibility:visible;transform:none;transition:opacity var(--t-med),transform var(--t-med),background var(--t-fast)}
+.to-top:hover{background:var(--gold-soft)}
+.to-top svg{width:20px;height:20px}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.reveal.is-visible{opacity:1;transform:none}
+.reveal--img{transform:none;clip-path:inset(0 0 100% 0);transition:clip-path 1.4s var(--ease),opacity .6s}
+.reveal--img.is-visible{clip-path:inset(0 0 0 0)}
+.reveal--d1{transition-delay:.1s}.reveal--d2{transition-delay:.2s}.reveal--d3{transition-delay:.3s}.reveal--d4{transition-delay:.4s}
+
+/* 20. RESPONSIVE ----------------------------------------------- */
+@media (max-width:1100px){
+  .services__grid{grid-template-columns:repeat(2,1fr)}
+  .footer__grid{grid-template-columns:1fr 1fr}
+  .hero__inner{grid-template-columns:1fr}
+  .hero__card{justify-self:start;width:min(100%,340px)}
+  .gallery__grid{grid-auto-rows:100px}
+}
+@media (max-width:900px){
+  .nav__links,.nav__cta{display:none}
+  .nav__toggle{display:flex}
+  .section-head{grid-template-columns:1fr;gap:16px}
+  .section-head__sub{justify-self:start}
+  .intro__grid,.why__grid,.contact__grid{grid-template-columns:1fr}
+  .why__intro{position:static}
+  .why__img{display:none}
+  .property-grid{grid-template-columns:repeat(2,1fr);gap:20px}
+  .featured{min-height:auto}
+  .featured__content{grid-template-columns:1fr}
+  .featured__num{display:none}
+  .featured__specs{grid-template-columns:repeat(2,1fr)}
+  .gallery__grid{grid-template-columns:repeat(6,1fr);grid-auto-rows:110px}
+  .gallery__item:nth-child(1){grid-column:span 6;grid-row:span 3}
+  .gallery__item:nth-child(2),.gallery__item:nth-child(3),.gallery__item:nth-child(4),.gallery__item:nth-child(5){grid-column:span 3;grid-row:span 2}
+  .hero__side{display:none}
+  .hero__card{display:none}
+  .contact__img{display:none}
+}
+@media (max-width:600px){
+  .hero__inner{padding-bottom:120px}
+  .hero__actions .btn{flex:1 1 100%}
+  .hero__scroll{left:var(--gutter);right:auto;bottom:34px}
+  .hero__scroll i{height:40px}
+  .intro__media{padding-bottom:26%;padding-right:12%}
+  .intro__img-small{width:56%;border-width:5px}
+  .intro__stats{grid-template-columns:1fr;gap:18px}
+  .property-grid{grid-template-columns:1fr}
+  .filters{padding:18px}
+  .filter{flex-basis:100%}
+  .services__grid{grid-template-columns:1fr}
+  .service{padding:34px 24px;min-height:300px}
+  .principle{grid-template-columns:56px 1fr;gap:16px;padding:30px 0}
+  .principle__num{font-size:2.2rem}
+  .principle:hover{padding-left:0}
+  .form__row{grid-template-columns:1fr}
+  .form__submit{justify-self:stretch}
+  .cta__actions .btn{flex:1 1 100%}
+  .footer__grid{grid-template-columns:1fr;gap:28px}
+  .to-top{right:16px;bottom:16px}
+  .gallery__grid{grid-template-columns:1fr 1fr;grid-auto-rows:140px;gap:10px}
+  .gallery__item:nth-child(1){grid-column:span 2;grid-row:span 2}
+  .gallery__item:nth-child(n+2){grid-column:span 1;grid-row:span 1}
+  .manifesto__copy{padding:22px 16px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .hero__media img{transform:none}
+  .reveal,.reveal--img,.manifesto__line>span,.hero__label,.hero__word,.hero__text,.hero__actions,.hero__scroll,.hero__card,.hero__side{opacity:1;transform:none;clip-path:none}
+}
+
+/* 21. ENHANCEMENTS — extra polish & ambient motion ------------- */
+
+/* 21.1 Directional reveal variants (opt-in via extra class) */
+.reveal--left{transform:translateX(-40px)}
+.reveal--right{transform:translateX(40px)}
+.reveal--scale{transform:scale(.94)}
+.reveal--blur{filter:blur(10px)}
+.reveal--left.is-visible,.reveal--right.is-visible,.reveal--scale.is-visible{transform:none}
+.reveal--blur.is-visible{filter:blur(0)}
+.reveal--left,.reveal--right,.reveal--scale{transition:opacity 1s var(--ease),transform 1.1s var(--ease)}
+.reveal--blur{transition:opacity 1s var(--ease),transform 1.1s var(--ease),filter 1.1s var(--ease)}
+
+/* 21.2 Staggered children — each child eases in a beat after the last */
+[data-stagger]>*{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .9s var(--ease)}
+[data-stagger].is-visible>*{opacity:1;transform:none}
+[data-stagger].is-visible>*:nth-child(1){transition-delay:.05s}
+[data-stagger].is-visible>*:nth-child(2){transition-delay:.13s}
+[data-stagger].is-visible>*:nth-child(3){transition-delay:.21s}
+[data-stagger].is-visible>*:nth-child(4){transition-delay:.29s}
+[data-stagger].is-visible>*:nth-child(5){transition-delay:.37s}
+[data-stagger].is-visible>*:nth-child(6){transition-delay:.45s}
+
+/* 21.3 Ambient drifting glow behind dark sections */
+.gallery,.services,.featured,.cta{position:relative}
+.gallery::after,.services::after{
+  content:"";position:absolute;z-index:0;width:60vw;height:60vw;max-width:720px;max-height:720px;
+  top:-10%;right:-14%;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle,rgba(242,242,242,.055),transparent 62%);
+  animation:drift 26s ease-in-out infinite alternate}
+.services::after{left:-16%;right:auto;top:auto;bottom:-12%;animation-duration:32s}
+.gallery>.container,.services>.container{position:relative;z-index:1}
+@keyframes drift{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(4%,6%,0) scale(1.12)}}
+
+/* 21.4 Animated eyebrow line — the rule extends on entry */
+.eyebrow::before,.eyebrow--center::after{transform-origin:left;animation:lineGrow 1.1s var(--ease) both}
+.eyebrow--center::after{transform-origin:right}
+@keyframes lineGrow{from{transform:scaleX(0);opacity:0}to{transform:scaleX(1);opacity:.7}}
+
+/* 21.5 Buttons — soft sheen sweep + lift */
+.btn{will-change:transform}
+.btn--gold,.btn--dark,.btn--ghost{position:relative}
+.btn--gold::after,.btn--dark::after{
+  content:"";position:absolute;top:0;left:-120%;width:55%;height:100%;pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);
+  transform:skewX(-18deg);transition:left .7s var(--ease)}
+.btn--gold:hover::after,.btn--dark:hover::after{left:130%}
+.btn--gold:hover,.btn--dark:hover{transform:translateY(-2px)}
+.btn--ghost:hover{transform:translateY(-2px)}
+
+/* 21.6 Property cards — smoother lift, image parallax feel, sheen on media */
+.property{will-change:transform}
+.property:hover{transform:translateY(-10px)}
+.property__media::before{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0;
+  background:linear-gradient(120deg,transparent 40%,rgba(255,255,255,.22) 50%,transparent 60%);
+  transform:translateX(-100%);transition:opacity .1s}
+.property:hover .property__media::before{opacity:1;animation:sheen 1.1s var(--ease)}
+@keyframes sheen{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+.property__badge{transition:transform var(--t-med),background var(--t-med)}
+.property:hover .property__badge{transform:translateY(-3px)}
+.property__price strong{transition:transform var(--t-med)}
+.property:hover .property__price strong{transform:translateY(-2px)}
+
+/* 21.7 Gallery tiles — caption rises, gentle depth on hover */
+.gallery__item{transition:transform .7s var(--ease),box-shadow .7s var(--ease)}
+.gallery__item:hover{transform:translateY(-6px);box-shadow:var(--shadow);z-index:2}
+.gallery__cap{transition:transform .6s var(--ease)}
+.gallery__item:hover .gallery__cap{transform:translateY(-4px)}
+.gallery__cap span{position:relative;display:inline-block}
+.gallery__cap span::after{content:"";position:absolute;left:0;bottom:-3px;width:100%;height:1px;background:var(--gold-soft);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease)}
+.gallery__item:hover .gallery__cap span::after{transform:scaleX(1)}
+
+/* 21.8 Service cards — icon float + lift, index fade */
+.service{transition:transform .6s var(--ease)}
+.service:hover{transform:translateY(-6px)}
+.service:hover .service__icon{animation:iconPop .6s var(--ease)}
+@keyframes iconPop{0%{transform:scale(1)}45%{transform:scale(1.12) rotate(-4deg)}100%{transform:scale(1)}}
+.service__idx{transition:opacity var(--t-med),transform var(--t-med)}
+.service:hover .service__idx{opacity:.9;transform:translateY(-3px)}
+
+/* 21.9 Principles (Why) — number slides & brightens, row nudges */
+.principle__num{transition:transform var(--t-med),color var(--t-med),opacity var(--t-med);opacity:.7}
+.principle:hover .principle__num{transform:translateX(4px) scale(1.04);color:var(--on-light);opacity:1}
+
+/* 21.10 Intro stats — subtle rise + shimmer on the figure */
+.intro__stats dt{transition:transform var(--t-med)}
+.intro__stats div:hover dt{transform:translateY(-3px)}
+
+/* 21.11 Nav links — gentle glow on active/hover */
+.nav__link{transition:color var(--t-fast),letter-spacing var(--t-fast)}
+.nav__link:hover{letter-spacing:.13em}
+.nav__brand .nav__mark{transition:transform var(--t-med)}
+.nav__brand:hover .nav__mark{transform:rotate(45deg) scale(1.12)}
+
+/* 21.12 Floating diamond mark — slow pulse */
+.nav__mark::before{animation:markPulse 4.5s ease-in-out infinite}
+@keyframes markPulse{0%,100%{opacity:1}50%{opacity:.45}}
+
+/* 21.13 Featured number — slow float */
+.featured__num{animation:floaty 7s ease-in-out infinite}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+
+/* 21.14 Section headings — a fine underline draws in when revealed */
+.section-head .h2{position:relative;overflow:hidden}
+.section-head.is-visible .h2::after,.gallery__head.is-visible .h2::after{
+  content:"";position:absolute;left:0;bottom:-.08em;width:64px;height:2px;background:var(--gold);
+  animation:lineGrow 1.2s var(--ease) .3s both}
+
+/* 21.15 To-top button — gentle bob when idle */
+.to-top.is-visible:not(:hover){animation:bob 2.6s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+
+/* 21.16 Form fields — focus ring lifts the field slightly */
+.field input,.field textarea,.select select{transition:border-color var(--t-fast),background var(--t-fast),transform var(--t-fast),box-shadow var(--t-fast)}
+.field input:focus,.field textarea:focus,.select select:focus{transform:translateY(-1px);box-shadow:0 8px 24px -16px rgba(0,0,0,.5)}
+
+/* 21.17 Contact image + why image — slow breathing zoom */
+.contact__img img,.why__img img{transition:transform 1.6s var(--ease)}
+.contact__img:hover img,.why__img:hover img{transform:scale(1.05)}
+
+/* 21.18 Link-arrow underline shimmer */
+.link-arrow{background-image:linear-gradient(var(--gold),var(--gold));background-size:0% 1px;background-position:0 100%;background-repeat:no-repeat;border-bottom-color:transparent!important;transition:background-size .5s var(--ease),gap var(--t-fast),color var(--t-fast)}
+.link-arrow:hover{background-size:100% 1px}
+
+/* 21.19 Form actions row + WhatsApp button */
+.form__actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.form__actions .form__submit{margin:0}
+.btn--whatsapp{color:var(--on-light);border-color:var(--line-light);background:transparent;gap:10px}
+.btn--whatsapp svg{width:20px;height:20px;transition:transform var(--t-fast)}
+.btn--whatsapp:hover{border-color:#25d366;color:#128c3e;transform:translateY(-2px)}
+.btn--whatsapp:hover svg{transform:scale(1.08)}
+.section--ivory .btn--whatsapp{color:var(--on-light)}
+
+/* 21.20 Floating WhatsApp button (fixed, bottom-left so it clears back-to-top) */
+.wa-fab{position:fixed;left:24px;bottom:24px;z-index:80;display:inline-flex;align-items:center;gap:0;
+  height:56px;padding:0 16px;border-radius:40px;background:var(--charcoal);color:var(--ivory);
+  border:1px solid var(--line-dark);box-shadow:var(--shadow);overflow:hidden;white-space:nowrap;
+  transform:translateY(14px);opacity:0;visibility:hidden;
+  transition:opacity var(--t-med),transform var(--t-med),visibility 0s .5s,background var(--t-fast),border-color var(--t-fast),gap var(--t-fast),padding var(--t-fast)}
+.wa-fab.is-visible{opacity:1;visibility:visible;transform:none;transition:opacity var(--t-med),transform var(--t-med),background var(--t-fast),border-color var(--t-fast),gap var(--t-fast),padding var(--t-fast)}
+.wa-fab svg{width:26px;height:26px;flex:0 0 auto}
+.wa-fab__label{max-width:0;opacity:0;font-size:.78rem;font-weight:500;letter-spacing:.06em;transition:max-width var(--t-med),opacity var(--t-fast),margin var(--t-fast)}
+.wa-fab:hover{background:#25d366;border-color:#25d366;color:#04310f;gap:10px}
+.wa-fab:hover .wa-fab__label{max-width:160px;opacity:1;margin-left:2px}
+.wa-fab::after{content:"";position:absolute;inset:-6px;border-radius:inherit;border:1px solid #25d366;opacity:0;animation:waPing 3.2s ease-out infinite}
+.wa-fab:hover::after{animation-play-state:paused;opacity:0}
+@keyframes waPing{0%{transform:scale(.9);opacity:.5}70%,100%{transform:scale(1.15);opacity:0}}
+@media (max-width:600px){
+  .wa-fab{left:16px;bottom:16px;height:52px;padding:0 14px}
+  .wa-fab:hover .wa-fab__label{max-width:120px}
+}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#home">Skip to content</a>
+
+<!-- NAVIGATION -->
+<header class="nav" id="nav">
+  <div class="nav__inner container">
+    <a href="#home" class="nav__brand" aria-label="Conscious Realty — Home">
+      <span class="nav__mark" aria-hidden="true"></span>
+      <span class="nav__name">Conscious Realty</span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#home" class="nav__link is-active">Home</a>
+      <a href="#properties" class="nav__link">Properties</a>
+      <a href="#about" class="nav__link">About</a>
+      <a href="#services" class="nav__link">Services</a>
+      <a href="#why" class="nav__link">Why Us</a>
+      <a href="#contact" class="nav__link">Contact</a>
+    </nav>
+    <a href="#properties" class="btn btn--outline nav__cta">Explore Properties</a>
+    <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <nav class="mobile-menu__links" aria-label="Mobile">
+    <a href="#home"><small>01</small>Home</a>
+    <a href="#properties"><small>02</small>Properties</a>
+    <a href="#about"><small>03</small>About</a>
+    <a href="#services"><small>04</small>Services</a>
+    <a href="#why"><small>05</small>Why Us</a>
+    <a href="#contact"><small>06</small>Contact</a>
+  </nav>
+  <div class="mobile-menu__foot">
+    <a href="#properties" class="btn btn--gold">Explore Properties</a>
+    <a href="tel:+917011981170" class="mobile-menu__phone">+91 70119 81170</a>
+  </div>
+</div>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero__media img-frame">
+    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2200&q=80" alt="Modern luxury residence glowing warmly at dusk" fetchpriority="high">
+  </div>
+  <div class="hero__overlay" aria-hidden="true"></div>
+  <span class="hero__side" aria-hidden="true">Dream · Live · Aware</span>
+
+  <div class="container hero__inner">
+    <div>
+      <p class="hero__label">Conscious Realty</p>
+      <h1 class="hero__title">
+        <span class="hero__word">Dream.</span>
+        <span class="hero__word">Live.</span>
+        <span class="hero__word">Aware.</span>
+      </h1>
+      <p class="hero__text">Discover spaces that don't just define where you live — they define how you live.</p>
+      <div class="hero__actions">
+        <a href="#properties" class="btn btn--gold">Explore Properties <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#contact" class="btn btn--ghost">Talk to an Expert</a>
+      </div>
+    </div>
+
+    <a href="#featured" class="hero__card" aria-label="See the featured residence">
+      <div class="img-frame">
+        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80" alt="Contemporary villa with pool at evening" loading="lazy">
+      </div>
+      <div class="hero__card-body">
+        <div><small>Featured residence</small><strong>The Verdant Estate</strong></div>
+        <span>₹4.20 Cr</span>
+      </div>
+    </a>
+  </div>
+
+  <a href="#about" class="hero__scroll" aria-label="Scroll to discover"><span>Scroll to discover</span><i aria-hidden="true"></i></a>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track" id="tickerTrack">
+    <span class="ticker__item">Dream <i></i> Live <i></i> Aware <i></i> Conscious Realty <i></i></span>
+    <span class="ticker__item">Real estate, with intention <i></i> Gurugram <i></i> Pune <i></i> Goa <i></i> Bangalore <i></i> Bhiwadi <i></i> Ranikhet <i></i> Nainital <i></i></span>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="intro section" id="about">
+  <div class="container intro__grid">
+    <div class="intro__media">
+      <span class="intro__frame" aria-hidden="true"></span>
+      <div class="intro__img-main img-frame reveal reveal--img">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=80" alt="Bright contemporary living room with floor-to-ceiling windows" loading="lazy">
+      </div>
+      <div class="intro__img-small img-frame reveal reveal--d2">
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80" alt="Warm, minimal interior detail with natural materials" loading="lazy">
+      </div>
+    </div>
+
+    <div class="intro__body">
+      <p class="eyebrow reveal">Real estate, with intention</p>
+      <h2 class="h2 reveal reveal--d1">Your next address should feel like more than an address.</h2>
+      <p class="lead reveal reveal--d2">Conscious Realty helps you discover thoughtfully selected properties that fit the way you live today and the life you're building toward. We look beyond square footage — at light, neighbourhood, value and the quiet details that turn a property into a home you're proud of.</p>
+      <p class="reveal reveal--d3">Every recommendation is made with care, explained clearly, and shaped around your aspirations, not a sales target.</p>
+      <dl class="intro__stats reveal reveal--d4" data-stagger>
+        <div><dt>Trust</dt><dd>Built on transparent relationships</dd></div>
+        <div><dt>Vision</dt><dd>Focused on better living</dd></div>
+        <div><dt>Experience</dt><dd>Guiding every property decision</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- PROPERTIES -->
+<section class="properties section section--ivory" id="properties">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">Property discovery</p>
+        <h2 class="h2">Find Your Place</h2>
+      </div>
+      <p class="section-head__sub">Spaces selected for the way you dream, live and grow.</p>
+    </div>
+
+    <form class="filters reveal" id="filters" aria-label="Filter properties">
+      <div class="filter"><label for="filterLocation">Location</label>
+        <div class="select"><select id="filterLocation" name="location">
+          <option value="all">All locations</option><option value="Gurugram">Gurugram</option><option value="Pune">Pune</option><option value="Goa">Goa</option><option value="Bangalore">Bangalore</option><option value="Bhiwadi">Bhiwadi</option><option value="Ranikhet">Ranikhet</option><option value="Nainital">Nainital</option>
+        </select></div></div>
+      <div class="filter"><label for="filterType">Property type</label>
+        <div class="select"><select id="filterType" name="type">
+          <option value="all">All types</option><option value="Apartment">Apartment</option><option value="Villa">Villa</option><option value="Residence">Residence</option>
+        </select></div></div>
+      <div class="filter"><label for="filterBudget">Budget</label>
+        <div class="select"><select id="filterBudget" name="budget">
+          <option value="all">Any budget</option><option value="under2">Under ₹2 Cr</option><option value="2to4">₹2 – 4 Cr</option><option value="4plus">₹4 Cr +</option>
+        </select></div></div>
+      <button type="button" class="filters__reset" id="filterReset">Reset</button>
+    </form>
+
+    <p class="properties__count" id="propertyCount" aria-live="polite"></p>
+    <div class="property-grid" id="propertyGrid"></div>
+
+    <div class="properties__empty" id="propertyEmpty" hidden>
+      <p class="h3">No properties match these filters.</p>
+      <p>Try widening the budget or location, or tell us what you're looking for and we'll search for you.</p>
+      <a href="#contact" class="btn btn--dark">Tell us what you need</a>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="living">
+  <div class="container">
+    <div class="gallery__head reveal">
+      <p class="eyebrow eyebrow--center">Living, considered</p>
+      <h2 class="h2">The details that make a house a home.</h2>
+      <p>Light, proportion, material and quiet — the things we look for before anything else.</p>
+    </div>
+    <div class="gallery__grid">
+      <figure class="gallery__item img-frame reveal">
+        <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1200&q=80" alt="Sunlit living room with layered natural textures" loading="lazy">
+        <figcaption class="gallery__cap"><span>Light</span><b>Rooms that follow the sun</b></figcaption>
+      </figure>
+      <figure class="gallery__item img-frame reveal reveal--d1">
+        <img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=1000&q=80" alt="Modern kitchen with stone and warm wood" loading="lazy">
+        <figcaption class="gallery__cap"><span>Material</span><b>Stone, oak, linen</b></figcaption>
+      </figure>
+      <figure class="gallery__item img-frame reveal reveal--d2">
+        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=900&q=80" alt="Calm bedroom with soft neutral palette" loading="lazy">
+        <figcaption class="gallery__cap"><span>Quiet</span><b>Space to rest</b></figcaption>
+      </figure>
+      <figure class="gallery__item img-frame reveal reveal--d2">
+        <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=900&q=80" alt="Minimal contemporary villa exterior with clean lines" loading="lazy">
+        <figcaption class="gallery__cap"><span>Proportion</span><b>Architecture with intent</b></figcaption>
+      </figure>
+      <figure class="gallery__item img-frame reveal reveal--d3">
+        <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1000&q=80" alt="Home terrace opening onto greenery" loading="lazy">
+        <figcaption class="gallery__cap"><span>Outdoors</span><b>Green within reach</b></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED -->
+<section class="featured" id="featured">
+  <div class="featured__media img-frame" data-parallax>
+    <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=2200&q=80" alt="Contemporary villa with pool and open terrace at evening" loading="lazy">
+  </div>
+  <div class="featured__overlay" aria-hidden="true"></div>
+  <div class="container featured__content">
+    <div class="featured__panel reveal reveal--left">
+      <p class="eyebrow">Featured residence</p>
+      <h2 class="featured__title">Where architecture meets intention.</h2>
+      <p class="featured__text">A demonstration listing that shows how a signature property is presented: generous light, considered materials, and a location chosen for the life it enables.</p>
+      <dl class="featured__specs">
+        <div><dt>Location</dt><dd>Gurugram</dd></div>
+        <div><dt>Bedrooms</dt><dd>4 BHK</dd></div>
+        <div><dt>Area</dt><dd>4,800 sq ft</dd></div>
+        <div><dt>Type</dt><dd>Premium Villa</dd></div>
+        <div><dt>Price</dt><dd>₹4.20 Cr</dd></div>
+      </dl>
+      <a href="#contact" class="btn btn--gold">Explore Residence <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="featured__num reveal reveal--d2" aria-hidden="true">No. 01</div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services section" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <div><p class="eyebrow">What we do</p><h2 class="h2">Guidance at every step.</h2></div>
+      <p class="section-head__sub">Whether you're buying, selling or investing, we bring clarity to a decision that deserves it.</p>
+    </div>
+    <div class="services__grid reveal" data-stagger>
+      <article class="service">
+        <div class="service__bg img-frame" aria-hidden="true"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy"></div>
+        <span class="service__idx" aria-hidden="true">i</span>
+        <span class="service__icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25"><path d="M5 15 16 6l11 9"/><path d="M8 13v12h16V13"/><path d="M13 25v-7h6v7"/></svg></span>
+        <h3 class="h3">Property Buying</h3>
+        <p>Helping clients discover properties aligned with their requirements and lifestyle.</p>
+      </article>
+      <article class="service">
+        <div class="service__bg img-frame" aria-hidden="true"><img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy"></div>
+        <span class="service__idx" aria-hidden="true">ii</span>
+        <span class="service__icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25"><path d="M6 24h20"/><path d="M9 24V12l7-5 7 5v12"/><path d="M4 10h24"/><circle cx="16" cy="16" r="2"/></svg></span>
+        <h3 class="h3">Property Selling</h3>
+        <p>Presenting properties professionally and connecting them with suitable buyers.</p>
+      </article>
+      <article class="service">
+        <div class="service__bg img-frame" aria-hidden="true"><img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy"></div>
+        <span class="service__idx" aria-hidden="true">iii</span>
+        <span class="service__icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25"><path d="M5 25h22"/><path d="M7 21l6-7 5 4 8-10"/><path d="M22 8h4v4"/></svg></span>
+        <h3 class="h3">Investment Advisory</h3>
+        <p>Helping clients evaluate opportunities with a long-term perspective.</p>
+      </article>
+      <article class="service">
+        <div class="service__bg img-frame" aria-hidden="true"><img src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy"></div>
+        <span class="service__idx" aria-hidden="true">iv</span>
+        <span class="service__icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25"><circle cx="16" cy="16" r="10"/><path d="M16 11v5l3 2"/><path d="M16 3v2M16 27v2M3 16h2M27 16h2"/></svg></span>
+        <h3 class="h3">Property Consultation</h3>
+        <p>Personalized guidance throughout the property decision-making process.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why section section--ivory" id="why">
+  <div class="container why__grid">
+    <div class="why__intro">
+      <p class="eyebrow reveal">Our philosophy</p>
+      <h2 class="h2 reveal reveal--d1">Why Conscious Realty?</h2>
+      <p class="lead reveal reveal--d2">Four principles shape every conversation we have and every property we recommend.</p>
+      <div class="why__img img-frame reveal reveal--img">
+        <img src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?auto=format&fit=crop&w=900&q=80" alt="Elegant home façade with warm evening light" loading="lazy">
+      </div>
+    </div>
+    <ol class="principles reveal" data-stagger>
+      <li class="principle"><span class="principle__num" aria-hidden="true">01</span><div><h3 class="h3">Transparency</h3><p>Clear communication. No unnecessary complexity.</p></div></li>
+      <li class="principle"><span class="principle__num" aria-hidden="true">02</span><div><h3 class="h3">Curated Choices</h3><p>Quality over quantity.</p></div></li>
+      <li class="principle"><span class="principle__num" aria-hidden="true">03</span><div><h3 class="h3">Lifestyle First</h3><p>Because property is ultimately about how you want to live.</p></div></li>
+      <li class="principle"><span class="principle__num" aria-hidden="true">04</span><div><h3 class="h3">Long-Term Thinking</h3><p>Decisions made with tomorrow in mind.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<section class="manifesto" id="manifesto">
+  <div class="manifesto__bg img-frame" data-parallax aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=2000&q=80" alt="" loading="lazy">
+  </div>
+  <div class="container">
+    <h2 class="manifesto__title" aria-label="Dream. Live. Aware.">
+      <span class="manifesto__line"><span>Dream.</span></span>
+      <span class="manifesto__line"><span>Live.</span></span>
+      <span class="manifesto__line"><span>Aware.</span></span>
+    </h2>
+    <div class="manifesto__copy reveal">
+      <p>Dream about the life you want.</p>
+      <p>Live it in a space that feels right.</p>
+      <p>Choose every step consciously.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta section" id="consult">
+  <div class="cta__bg img-frame" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1600566752229-250ed79470f8?auto=format&fit=crop&w=2000&q=70" alt="" loading="lazy">
+  </div>
+  <div class="container cta__inner reveal">
+    <p class="eyebrow eyebrow--center">Start here</p>
+    <h2 class="cta__title">Let's Find Your Next Address.</h2>
+    <p class="cta__text">Tell us what you're looking for, and let's explore what's possible.</p>
+    <div class="cta__actions">
+      <a href="tel:+917011981170" class="btn btn--gold">Call Conscious Realty</a>
+      <a href="https://wa.me/917011981170?text=Hello%20Conscious%20Realty%2C%20I%20would%20like%20to%20discuss%20a%20property%20opportunity." class="btn btn--ghost" target="_blank" rel="noopener">WhatsApp Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact section section--ivory" id="contact">
+  <div class="container contact__grid">
+    <div class="contact__info reveal reveal--left">
+      <p class="eyebrow">Get in touch</p>
+      <h2 class="h2">Conscious Realty</h2>
+      <p class="contact__tag">Dream, Live, Aware</p>
+      <dl class="contact__list">
+        <div><dt>Phone</dt><dd><a href="tel:+917011981170">+91 70119 81170</a></dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:Consciousrealtyofficial@gmail.com">Consciousrealtyofficial@gmail.com</a></dd></div>
+        <div><dt>Instagram</dt><dd><a href="https://instagram.com/conscious_realty" target="_blank" rel="noopener">@conscious_realty</a></dd></div>
+        <div><dt>Facebook</dt><dd><a href="https://facebook.com/ConsciousRealty" target="_blank" rel="noopener">ConsciousRealty</a></dd></div>
+      </dl>
+      <div class="contact__img img-frame">
+        <img src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=1000&q=80" alt="Serene lounge with natural light and neutral tones" loading="lazy">
+      </div>
+    </div>
+
+    <form class="form reveal reveal--right reveal--d1" id="contactForm" novalidate>
+      <div class="form__row">
+        <div class="field"><label for="fName">Name</label><input type="text" id="fName" name="name" autocomplete="name" required><span class="field__error" aria-live="polite"></span></div>
+        <div class="field"><label for="fPhone">Phone</label><input type="tel" id="fPhone" name="phone" autocomplete="tel" inputmode="tel" required><span class="field__error" aria-live="polite"></span></div>
+      </div>
+      <div class="field"><label for="fEmail">Email</label><input type="email" id="fEmail" name="email" autocomplete="email" required><span class="field__error" aria-live="polite"></span></div>
+      <div class="field"><label for="fInterest">I'm interested in</label>
+        <div class="select"><select id="fInterest" name="interest" required>
+          <option value="" disabled selected>Choose an option</option>
+          <option>Buying a Property</option><option>Selling a Property</option><option>Property Investment</option><option>Property Consultation</option>
+        </select></div><span class="field__error" aria-live="polite"></span></div>
+      <div class="field"><label for="fMessage">Message</label><textarea id="fMessage" name="message" rows="4" required></textarea><span class="field__error" aria-live="polite"></span></div>
+
+      <!-- Honeypot: hidden from people, catches spam bots. Do not remove. -->
+      <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+
+      <div class="form__actions">
+        <button type="submit" class="btn btn--dark form__submit">Start a Conversation</button>
+        <button type="button" class="btn btn--whatsapp" id="formWhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.03c-.24.68-1.42 1.31-1.95 1.36-.5.05-1.12.24-3.77-.79-3.17-1.25-5.2-4.47-5.36-4.68-.16-.21-1.28-1.7-1.28-3.25s.81-2.3 1.1-2.62c.29-.32.63-.4.84-.4.21 0 .42 0 .6.01.19.01.45-.07.7.54.24.6.83 2.06.9 2.21.07.15.12.32.02.53-.1.21-.15.34-.29.53-.15.18-.31.4-.44.54-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.21.73-.85.92-1.14.19-.29.39-.24.65-.15.26.1 1.67.79 1.96.93.29.15.48.22.55.34.07.12.07.7-.17 1.38Z"/></svg>
+          WhatsApp
+        </button>
+      </div>
+
+      <div class="form__success" id="formSuccess" hidden role="status" tabindex="-1">
+        <span class="form__check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12l5 5 9-10"/></svg></span>
+        <h3 class="h3">Thank you. Your enquiry is on its way.</h3>
+        <p>A member of Conscious Realty will reach out shortly to start the conversation.</p>
+        <button type="button" class="form__again" id="formAgain">Send another message</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__word" aria-hidden="true">Conscious Realty</div>
+  <div class="container footer__grid reveal" data-stagger>
+    <div class="footer__brand">
+      <a href="#home" class="footer__logo"><span class="nav__mark" aria-hidden="true"></span>Conscious Realty</a>
+      <p class="footer__tag">Dream, Live, Aware</p>
+    </div>
+    <div><h4>Explore</h4><nav class="footer__links" aria-label="Footer"><a href="#home">Home</a><a href="#properties">Properties</a><a href="#about">About</a><a href="#services">Services</a><a href="#contact">Contact</a></nav></div>
+    <div><h4>Contact</h4><div class="footer__contact"><a href="tel:+917011981170">+91 70119 81170</a><a href="mailto:Consciousrealtyofficial@gmail.com">Consciousrealtyofficial@gmail.com</a></div></div>
+    <div><h4>Follow</h4><div class="footer__social"><a href="https://instagram.com/conscious_realty" target="_blank" rel="noopener">Instagram</a><a href="https://facebook.com/ConsciousRealty" target="_blank" rel="noopener">Facebook</a></div></div>
+  </div>
+  <div class="container footer__bottom">
+    <p>© 2026 Conscious Realty. All rights reserved.</p>
+    <p>Gurugram · Pune · Goa · Bangalore · Bhiwadi · Ranikhet · Nainital</p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<!-- Floating WhatsApp chat button — href is set from CONFIG on load -->
+<a class="wa-fab" id="waFab" href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.03c-.24.68-1.42 1.31-1.95 1.36-.5.05-1.12.24-3.77-.79-3.17-1.25-5.2-4.47-5.36-4.68-.16-.21-1.28-1.7-1.28-3.25s.81-2.3 1.1-2.62c.29-.32.63-.4.84-.4.21 0 .42 0 .6.01.19.01.45-.07.7.54.24.6.83 2.06.9 2.21.07.15.12.32.02.53-.1.21-.15.34-.29.53-.15.18-.31.4-.44.54-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.21.73-.85.92-1.14.19-.29.39-.24.65-.15.26.1 1.67.79 1.96.93.29.15.48.22.55.34.07.12.07.7-.17 1.38Z"/></svg>
+  <span class="wa-fab__label">Chat with us</span>
+</a>
+
+<script>
+/* ============================================================
+   CONSCIOUS REALTY — SCRIPT
+   1 Property data  2 Rendering & filters  3 Nav
+   4 Reveal / parallax / to-top / ticker  5 Form  6 Image fallback
+   ============================================================ */
+(function(){
+'use strict';
+
+/* ============================================================
+   ⚙️  SITE SETTINGS — EDIT THESE TWO THINGS, NOTHING ELSE
+   ------------------------------------------------------------
+   1) WHATSAPP_NUMBER
+      Your client's WhatsApp number in FULL international form,
+      digits only — no +, spaces or dashes.
+      India example: 91 followed by the 10-digit mobile.
+      e.g. '917011981170'
+
+   2) WEB3FORMS_KEY  (this is how the form emails your client)
+      • Go to https://web3forms.com  → enter your client's email
+        → they email you a free "Access Key" (a long code).
+      • Paste that key between the quotes below.
+      • Submissions then arrive in your client's inbox automatically.
+      • Leave it as 'YOUR_WEB3FORMS_ACCESS_KEY' to DISABLE email —
+        the form will then fall back to sending via WhatsApp instead,
+        so the site still works while you set the key up.
+
+      (Prefer Formspree or your own PHP/Node endpoint? Set
+       FORM_ENDPOINT below to that URL and it'll be used instead.)
+   ============================================================ */
+  const CONFIG = {
+    WHATSAPP_NUMBER: '917011981170',
+    WEB3FORMS_KEY:   'YOUR_WEB3FORMS_ACCESS_KEY',
+    FORM_ENDPOINT:   '', // optional: Formspree/own URL. Blank = use Web3Forms key above.
+    BUSINESS_NAME:   'Conscious Realty'
+  };
+  // expose for the form module
+  window.__CR_CONFIG = CONFIG;
+
+/* 1. PROPERTY DATA — DEMO CONTENT. Replace with real listings.
+   type must be "Apartment" | "Villa" | "Residence"; location must be one of
+   "Gurugram" | "Pune" | "Goa" | "Bangalore" | "Bhiwadi" | "Ranikhet" | "Nainital"
+   (these match the filter values). Gurugram is the primary market.
+   priceCr (number, crore) drives the budget filter. */
+const PROPERTIES = [
+  { id:'verdant-estate', name:'The Verdant Estate', type:'Villa', typeLabel:'Premium Villa',
+    location:'Gurugram', locationLabel:'Golf Course Road, Gurugram', bhk:'4 BHK', area:'4,800 sq ft',
+    priceCr:4.20, priceLabel:'₹4.20 Cr',
+    description:'A contemporary villa with a private pool, double-height living and a garden that changes with the seasons.',
+    image:'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=80', link:'#contact' },
+  { id:'linden-court', name:'Linden Court', type:'Apartment', typeLabel:'Designer Apartment',
+    location:'Gurugram', locationLabel:'Golf Course Extension, Gurugram', bhk:'3 BHK', area:'2,150 sq ft',
+    priceCr:3.40, priceLabel:'₹3.40 Cr',
+    description:'Corner residences with wraparound balconies and views across the green corridor.',
+    image:'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80', link:'#contact' },
+  { id:'aria-residences', name:'The Aria Residences', type:'Apartment', typeLabel:'Luxury Apartment',
+    location:'Gurugram', locationLabel:'Dwarka Expressway, Gurugram', bhk:'3 & 4 BHK', area:'2,400 – 3,100 sq ft',
+    priceCr:2.85, priceLabel:'₹2.85 Cr',
+    description:'Light-filled residences with private terraces, set within a landscaped enclave close to the green belt.',
+    image:'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80', link:'#contact' },
+  { id:'palms-retreat', name:'The Palms Retreat', type:'Villa', typeLabel:'Beachside Villa',
+    location:'Goa', locationLabel:'Assagao, North Goa', bhk:'4 BHK', area:'5,100 sq ft',
+    priceCr:6.75, priceLabel:'₹6.75 Cr',
+    description:'A modern courtyard home minutes from the coast, built around a central garden and open sky.',
+    image:'https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=1200&q=80', link:'#contact' },
+  { id:'urban-crest', name:'The Urban Crest', type:'Residence', typeLabel:'Luxury Residence',
+    location:'Pune', locationLabel:'Kharadi, Pune', bhk:'2 & 3 BHK', area:'1,450 – 2,050 sq ft',
+    priceCr:1.65, priceLabel:'₹1.65 Cr',
+    description:'Efficient, elegant homes in a well-connected tower, with skyline views and a rooftop lounge for residents.',
+    image:'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=80', link:'#contact' },
+  { id:'pine-vista', name:'Pine Vista', type:'Residence', typeLabel:'Hill Residence',
+    location:'Nainital', locationLabel:'Nainital, Uttarakhand', bhk:'3 & 4 BHK', area:'2,300 – 3,000 sq ft',
+    priceCr:2.10, priceLabel:'₹2.10 Cr',
+    description:'High-floor homes with double-glazed glass, framed by pine forest and generous mountain views.',
+    image:'https://images.unsplash.com/photo-1600573472592-401b489a3cdc?auto=format&fit=crop&w=1200&q=80', link:'#contact' }
+];
+
+const BUDGETS = {
+  all:     () => true,
+  under2:  p => p.priceCr < 2,
+  '2to4':  p => p.priceCr >= 2 && p.priceCr <= 4,
+  '4plus': p => p.priceCr > 4
+};
+
+const $  = (s, c = document) => c.querySelector(s);
+const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+/* 2. RENDERING & FILTERS */
+function card(p){
+  return `
+  <article class="property" data-id="${esc(p.id)}">
+    <div class="property__media img-frame">
+      <img src="${esc(p.image)}" alt="${esc(p.name)} — ${esc(p.typeLabel)} in ${esc(p.locationLabel)}" loading="lazy">
+      <span class="property__badge">${esc(p.typeLabel)}</span>
+      <div class="property__price"><small>Starting from</small><strong>${esc(p.priceLabel)}</strong></div>
+    </div>
+    <div class="property__body">
+      <div class="property__meta"><span>${esc(p.locationLabel)}</span><span>${esc(p.bhk)}</span></div>
+      <h3 class="property__name">${esc(p.name)}</h3>
+      <p class="property__desc">${esc(p.description)}</p>
+      <div class="property__foot">
+        <div class="property__specs"><span><b>${esc(p.area)}</b></span></div>
+        <a href="${esc(p.link)}" class="link-arrow property__link" aria-label="View ${esc(p.name)}">View Property
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </article>`;
+}
+
+function initProperties(){
+  const grid = $('#propertyGrid'), count = $('#propertyCount'), empty = $('#propertyEmpty'), form = $('#filters');
+  if(!grid || !form) return;
+  grid.innerHTML = PROPERTIES.map(card).join('');
+  const cards = $$('.property', grid);
+  bindImageFallback(grid);
+
+  function apply(){
+    const loc = $('#filterLocation').value, type = $('#filterType').value, budget = $('#filterBudget').value;
+    const test = BUDGETS[budget] || BUDGETS.all;
+    let shown = 0;
+    cards.forEach((el, i) => {
+      const p = PROPERTIES[i];
+      const ok = (loc==='all' || p.location===loc) && (type==='all' || p.type===type) && test(p);
+      if(ok){
+        shown++;
+        if(el.classList.contains('is-hidden')){
+          el.classList.remove('is-hidden'); el.classList.add('is-entering');
+          void el.offsetWidth;
+          requestAnimationFrame(() => el.classList.remove('is-entering'));
+        }
+      } else el.classList.add('is-hidden');
+    });
+    count.textContent = shown ? `Showing ${shown} of ${PROPERTIES.length} properties` : '';
+    empty.hidden = shown > 0;
+  }
+  form.addEventListener('change', apply);
+  $('#filterReset').addEventListener('click', () => { form.reset(); apply(); });
+  apply();
+}
+
+/* 3. NAV */
+function initNav(){
+  const nav = $('#nav'), toggle = $('#navToggle'), menu = $('#mobileMenu');
+  const links = $$('.nav__link'), targets = links.map(l => $(l.getAttribute('href'))).filter(Boolean);
+  const onScroll = () => nav.classList.toggle('is-scrolled', window.scrollY > 40);
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if(!e.isIntersecting) return;
+        const id = '#' + e.target.id;
+        links.forEach(l => l.classList.toggle('is-active', l.getAttribute('href') === id));
+      });
+    }, {rootMargin:'-45% 0px -50% 0px'});
+    targets.forEach(t => io.observe(t));
+  }
+
+  function setMenu(open){
+    toggle.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    menu.classList.toggle('is-open', open);
+    menu.setAttribute('aria-hidden', String(!open));
+    document.body.classList.toggle('menu-open', open);
+  }
+  toggle.addEventListener('click', () => setMenu(!menu.classList.contains('is-open')));
+  $$('a', menu).forEach(a => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', e => { if(e.key==='Escape' && menu.classList.contains('is-open')){ setMenu(false); toggle.focus(); } });
+  window.addEventListener('resize', () => { if(window.innerWidth > 900 && menu.classList.contains('is-open')) setMenu(false); });
+}
+
+/* 4. REVEAL, PARALLAX, TO-TOP, TICKER */
+function initReveal(){
+  const items = $$('.reveal, .manifesto');
+  if(!('IntersectionObserver' in window) || reduceMotion){ items.forEach(el => el.classList.add('is-visible')); return; }
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+  }, {threshold:.12, rootMargin:'0px 0px -6% 0px'});
+  items.forEach(el => io.observe(el));
+}
+
+function initParallax(){
+  const layers = $$('[data-parallax]');
+  if(!layers.length || reduceMotion) return;
+  let ticking = false;
+  function update(){
+    const vh = window.innerHeight;
+    layers.forEach(layer => {
+      const r = layer.parentElement.getBoundingClientRect();
+      if(r.bottom < 0 || r.top > vh) return;
+      const progress = (r.top + r.height/2 - vh/2) / (vh + r.height);
+      layer.style.transform = `translate3d(0, ${(-progress*14).toFixed(2)}%, 0)`;
+    });
+    ticking = false;
+  }
+  window.addEventListener('scroll', () => { if(!ticking){ requestAnimationFrame(update); ticking = true; } }, {passive:true});
+  update();
+}
+
+function initToTop(){
+  const btn = $('#toTop'); if(!btn) return;
+  window.addEventListener('scroll', () => btn.classList.toggle('is-visible', window.scrollY > window.innerHeight*.8), {passive:true});
+  btn.addEventListener('click', () => window.scrollTo({top:0, behavior: reduceMotion ? 'auto' : 'smooth'}));
+}
+
+function initTicker(){
+  const track = $('#tickerTrack'); if(!track) return;
+  // duplicate content so the loop is seamless
+  track.innerHTML += track.innerHTML;
+}
+
+/* 5. CONTACT FORM */
+function initForm(){
+  const form = $('#contactForm'), success = $('#formSuccess'); if(!form) return;
+  const rules = {
+    name:     v => v.trim().length >= 2 || 'Enter your name.',
+    phone:    v => /^[+\d][\d\s\-()]{7,}$/.test(v.trim()) || 'Enter a valid phone number.',
+    email:    v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) || 'Enter a valid email address.',
+    interest: v => v !== '' || 'Choose what you\'re interested in.',
+    message:  v => v.trim().length >= 10 || 'Tell us a little more (at least 10 characters).'
+  };
+  function validate(input){
+    const field = input.closest('.field'), err = $('.field__error', field);
+    const res = rules[input.name] ? rules[input.name](input.value) : true, ok = res === true;
+    field.classList.toggle('is-invalid', !ok); err.textContent = ok ? '' : res;
+    input.setAttribute('aria-invalid', String(!ok)); return ok;
+  }
+  const inputs = $$('input, select, textarea', form);
+  inputs.forEach(i => {
+    i.addEventListener('blur', () => validate(i));
+    i.addEventListener('input', () => { if(i.closest('.field').classList.contains('is-invalid')) validate(i); });
+  });
+  const submitBtn = form.querySelector('.form__submit');
+  const cfg = window.__CR_CONFIG || {};
+
+  // Build a WhatsApp deep-link that pre-fills the enquiry from the form fields
+  function whatsappHref(){
+    const get = n => (form.querySelector(`[name="${n}"]`)?.value || '').trim();
+    const lines = [
+      `Hello ${cfg.BUSINESS_NAME || ''},`.trim(),
+      ``,
+      `Name: ${get('name')}`,
+      `Phone: ${get('phone')}`,
+      `Email: ${get('email')}`,
+      `Interested in: ${get('interest')}`,
+      `Message: ${get('message')}`
+    ].join('\n');
+    return `https://wa.me/${(cfg.WHATSAPP_NUMBER||'').replace(/\D/g,'')}?text=${encodeURIComponent(lines)}`;
+  }
+  // Wire the "Send via WhatsApp" button (validates first, then opens WhatsApp)
+  const waBtn = $('#formWhatsApp');
+  if(waBtn){
+    waBtn.addEventListener('click', () => {
+      const results = inputs.map(validate), bad = inputs[results.indexOf(false)];
+      if(bad){ bad.focus(); return; }
+      window.open(whatsappHref(), '_blank', 'noopener');
+    });
+  }
+
+  async function sendToEmail(){
+    const endpoint = cfg.FORM_ENDPOINT || 'https://api.web3forms.com/submit';
+    const usingWeb3 = !cfg.FORM_ENDPOINT;
+    const keyMissing = usingWeb3 && (!cfg.WEB3FORMS_KEY || cfg.WEB3FORMS_KEY === 'YOUR_WEB3FORMS_ACCESS_KEY');
+    if(keyMissing) return {ok:false, reason:'unconfigured'};
+
+    const data = new FormData(form);
+    if(usingWeb3){
+      data.append('access_key', cfg.WEB3FORMS_KEY);
+      data.append('subject', `New enquiry — ${cfg.BUSINESS_NAME || 'Website'}`);
+      data.append('from_name', cfg.BUSINESS_NAME || 'Website enquiry');
+    }
+    try{
+      const res = await fetch(endpoint, { method:'POST', body:data, headers:{'Accept':'application/json'} });
+      return {ok: res.ok};
+    }catch(err){
+      return {ok:false, reason:'network'};
+    }
+  }
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const results = inputs.map(validate), bad = inputs[results.indexOf(false)];
+    if(bad){ bad.focus(); return; }
+
+    const label = submitBtn.textContent;
+    submitBtn.disabled = true; submitBtn.textContent = 'Sending…';
+
+    const result = await sendToEmail();
+
+    submitBtn.disabled = false; submitBtn.textContent = label;
+
+    if(result.ok){
+      success.hidden = false; success.focus();
+      return;
+    }
+    // Email not sent (key not set yet, or a network hiccup) — fall back to WhatsApp
+    // so the lead is never lost.
+    const proceed = window.confirm(
+      result.reason === 'unconfigured'
+        ? 'Email delivery isn\u2019t set up yet. Send your enquiry over WhatsApp instead?'
+        : 'We couldn\u2019t send that just now. Send your enquiry over WhatsApp instead?'
+    );
+    if(proceed){
+      window.open(whatsappHref(), '_blank', 'noopener');
+      success.hidden = false; success.focus();
+    }
+  });
+  $('#formAgain').addEventListener('click', () => {
+    form.reset();
+    inputs.forEach(i => { i.closest('.field').classList.remove('is-invalid'); i.removeAttribute('aria-invalid'); });
+    $$('.field__error', form).forEach(el => el.textContent = '');
+    submitBtn.disabled = false;
+    success.hidden = true; inputs[0].focus();
+  });
+}
+
+/* 6. IMAGE FALLBACK — mark frames whose photo failed to load */
+function bindImageFallback(scope = document){
+  $$('.img-frame img', scope).forEach(img => {
+    const fail = () => img.closest('.img-frame').classList.add('is-broken');
+    if(img.complete && img.naturalWidth === 0 && img.src) fail();
+    img.addEventListener('error', fail);
+  });
+}
+
+/* 7. POINTER TILT — subtle 3D response on the hero card (fine pointers only) */
+function initTilt(){
+  if(reduceMotion || !window.matchMedia('(pointer:fine)').matches) return;
+  const card = $('.hero__card'); if(!card) return;
+  card.style.transformStyle = 'preserve-3d';
+  card.style.transition = 'transform .3s var(--ease)';
+  const max = 6; // degrees
+  card.addEventListener('pointermove', e => {
+    const r = card.getBoundingClientRect();
+    const px = (e.clientX - r.left) / r.width - .5;
+    const py = (e.clientY - r.top) / r.height - .5;
+    card.style.transform = `perspective(900px) rotateX(${(-py*max).toFixed(2)}deg) rotateY(${(px*max).toFixed(2)}deg) translateY(-2px)`;
+  });
+  const reset = () => card.style.transform = 'perspective(900px) rotateX(0) rotateY(0)';
+  card.addEventListener('pointerleave', reset);
+}
+
+/* 8. MAGNETIC BUTTONS — primary buttons ease toward the cursor slightly */
+function initMagnetic(){
+  if(reduceMotion || !window.matchMedia('(pointer:fine)').matches) return;
+  $$('.btn--gold, .btn--dark').forEach(btn => {
+    const strength = 10;
+    btn.addEventListener('pointermove', e => {
+      const r = btn.getBoundingClientRect();
+      const x = (e.clientX - r.left - r.width/2) / (r.width/2);
+      const y = (e.clientY - r.top - r.height/2) / (r.height/2);
+      btn.style.transform = `translate(${(x*strength).toFixed(1)}px, ${(y*strength - 2).toFixed(1)}px)`;
+    });
+    btn.addEventListener('pointerleave', () => btn.style.transform = '');
+  });
+}
+
+/* 9. FLOATING WHATSAPP BUTTON */
+function initWhatsApp(){
+  const fab = $('#waFab'); if(!fab) return;
+  const cfg = window.__CR_CONFIG || {};
+  const num = (cfg.WHATSAPP_NUMBER || '').replace(/\D/g,'');
+  if(!num){ fab.remove(); return; } // no number set → don't show a dead button
+  const text = `Hello ${cfg.BUSINESS_NAME || ''}, I'd like to know more about your properties.`.trim();
+  fab.href = `https://wa.me/${num}?text=${encodeURIComponent(text)}`;
+  // reveal once the user scrolls a little
+  const onScroll = () => fab.classList.toggle('is-visible', window.scrollY > 320);
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initTicker(); initProperties(); initNav(); initReveal(); initParallax(); initToTop(); initForm(); bindImageFallback();
+  initTilt(); initMagnetic(); initWhatsApp();
+});
+})();
+</script>
+</body>
+</html>
