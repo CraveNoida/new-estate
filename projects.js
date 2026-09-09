@@ -1,0 +1,328 @@
+/* ============================================================
+   CONSCIOUS REALTY — PROJECT DATABASE
+   ============================================================
+   To ADD a new project   → copy any object below, paste at the end,
+                            fill in the details, and give it a unique `id`.
+   To REMOVE a project    → delete its entire { … } block and the comma before it.
+   To EDIT a project      → change the values you need.
+   To create its detail page → duplicate any project-*.html, rename it to
+                               project-<id>.html, and update the content.
+   ============================================================ */
+
+const PROJECTS = [
+  {
+    id: 'eldeco-terra-and-sol',
+    name: 'Eldeco Terra And Sol',
+    developer: 'Eldeco',
+    developerExp: '50+ Years',
+    location: 'Sector 80, New Gurgaon',
+    city: 'Gurugram',
+    type: 'Apartment',
+    config: '3 BHK',
+    sizeRange: '2,150 – 2,450 Sq. Ft.',
+    priceCr: 3.23,
+    priceLabel: '₹3.23 Cr onwards',
+    priceRange: '₹3.23 Cr – ₹3.67 Cr',
+    status: 'New Launch',
+    possession: 'January 2031',
+    totalUnits: 224,
+    totalArea: '2.7 Acres',
+    rera: 'GGM/1048/780/2026/20',
+    reraPortal: 'haryanarera.gov.in',
+    highlights: [
+      'Japanese-inspired Onigiri architecture',
+      '100% corner residences for maximum light & ventilation',
+      'Expansive wraparound balconies with panoramic views',
+      '~1.5 lakh sq. ft. clubhouse',
+      'Low-density layout: only 224 units on 2.7 acres',
+      '2-minute drive to NH-48; IGI Airport 30-40 min'
+    ],
+    amenities: [
+      'Gymnasium', 'Swimming Pool', 'Kids Pool', 'Badminton Court', 'Squash Court',
+      'Cricket', 'Yoga Areas', 'Jogging & Cycle Track', 'Clubhouse', 'Amphitheater',
+      'Cafe & Coffee Bar', 'Dance Room', 'Library', 'Conference Room',
+      '24x7 Security', 'CCTV Surveillance', 'Power Backup', 'Lift', 'Party Lawn'
+    ],
+    description: 'A Japanese-inspired residential development offering 100% corner residences with wraparound balconies, panoramic views, and a 1.5 lakh sq. ft. clubhouse — all in a low-density, premium setting.',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
+    detailPage: 'project-eldeco-terra-and-sol.html'
+  },
+  {
+    id: 'conscient-parq',
+    name: 'Conscient Parq',
+    developer: 'Conscient',
+    developerExp: '4+ Years',
+    location: 'Sector 80, Gurgaon',
+    city: 'Gurugram',
+    type: 'Apartment',
+    config: '3 & 4 BHK',
+    sizeRange: '1,945 – 2,850 Sq. Ft.',
+    priceCr: 3.40,
+    priceLabel: '₹3.40 Cr onwards',
+    priceRange: '₹3.40 Cr – ₹4.99 Cr',
+    status: 'Under Construction',
+    possession: 'May 2031',
+    totalUnits: 528,
+    totalArea: '5.6 Acres',
+    rera: 'GGM/818/550/2024/45',
+    reraPortal: 'haryanarera.gov.in',
+    highlights: [
+      'Iconic skywalk design connecting different zones',
+      '2-acre landscaped central courtyard',
+      '~50,000 sq. ft. world-class clubhouse',
+      'Imported marble flooring & VRV AC fittings',
+      'Four G+34 towers on 5.6 acres',
+      'Near NH-8 (0.5 km), Southern Peripheral Road (4.5 km)'
+    ],
+    amenities: [
+      'Gymnasium', 'Swimming Pool', 'Kids Pool', 'Badminton Court', 'Tennis Court',
+      'Cricket', 'Basketball Court', 'Skating Rink', 'Yoga Areas', 'Jogging & Cycle Track',
+      'Luxurious Clubhouse', 'Mini Cineplex', 'Party Hall', 'Steam Room',
+      'In-house Restaurant', 'Futsal Court', 'Business Centre',
+      '24x7 Security', 'CCTV Surveillance', 'Power Backup', 'Fire Fighting Systems'
+    ],
+    description: 'An eco-conscious luxury development featuring an iconic skywalk, a 2-acre central courtyard, imported marble flooring, and VRV air conditioning as standard across all units.',
+    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80',
+    detailPage: 'project-conscient-parq.html'
+  },
+  {
+    id: 'conscient-elaira',
+    name: 'Conscient Elaira Residences',
+    developer: 'Conscient',
+    developerExp: '4+ Years',
+    location: 'Sector 80, Gurgaon',
+    city: 'Gurugram',
+    type: 'Apartment',
+    config: '3 & 4 BHK',
+    sizeRange: '1,995 – 2,695 Sq. Ft.',
+    priceCr: 3.18,
+    priceLabel: '₹3.18 Cr onwards',
+    priceRange: '₹3.18 Cr – ₹4.30 Cr',
+    status: 'Under Construction',
+    possession: 'March 2031',
+    totalUnits: 540,
+    totalArea: '1.9 Acres',
+    rera: 'GGM/917/649/2025/20',
+    reraPortal: 'haryanarera.gov.in',
+    highlights: [
+      'Wellness-centric, nature-rich lifestyle near Aravallis',
+      '~66,000 sq. ft. clubhouse with landscaped elegance',
+      'Near Jack Nicklaus-designed golf courses',
+      'VRF air-conditioning as standard',
+      'Three G+34 towers with premium finishes',
+      'NH-8 just 0.5 km away'
+    ],
+    amenities: [
+      'Gymnasium', 'Swimming Pool', 'Plunge Pool', 'Padel Court', 'Badminton Court',
+      'Tennis Court', 'Basketball Court', 'Yoga Areas', 'Jogging & Cycle Track',
+      'Clubhouse', 'Mini Theatre', 'Business Lounge', 'Library',
+      'Cafe & Coffee Bar', 'Party Hall', 'Meditation Lawns', 'Pet Park',
+      '24x7 Security', 'CCTV Surveillance', 'Power Backup', 'Fire Fighting Systems'
+    ],
+    description: 'A wellness-focused residential project near the Aravalli hills, offering a 66,000 sq. ft. clubhouse, VRF air-conditioning, and proximity to world-class golf courses.',
+    image: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=80',
+    detailPage: 'project-conscient-elaira.html'
+  },
+  {
+    id: 'signature-global-park',
+    name: 'Signature Global Park',
+    developer: 'Signature Global',
+    developerExp: '19+ Years',
+    location: 'Sohna Sector 36, Gurgaon',
+    city: 'Gurugram',
+    type: 'Independent Floor',
+    config: '2 & 3 BHK',
+    sizeRange: '745 – 1,210 Sq. Ft.',
+    priceCr: 0.98,
+    priceLabel: '₹98.34 Lac onwards',
+    priceRange: '₹98.34 Lac – ₹1.60 Cr',
+    status: 'Partially Ready To Move',
+    possession: 'October 2026',
+    totalUnits: 495,
+    totalArea: '9.54 Acres',
+    rera: 'GGM/494/226/2021/62',
+    reraPortal: 'haryanarera.gov.in',
+    highlights: [
+      'Designed by Padma Bhushan architect Hafeez Contractor',
+      'Independent floor living with stilt parking',
+      'Amidst peaceful Aravalli Hill surroundings',
+      'Classical-themed gardens & landscaped green spaces',
+      'On Sohna-Gurgaon Road; Delhi-Mumbai Expressway 1.5 km',
+      'Partially ready to move — October 2026 possession'
+    ],
+    amenities: [
+      'Gymnasium', 'Swimming Pool', 'Kids Pool', 'Badminton Court', 'Tennis Court',
+      'Basketball Court', 'Skating Rink', 'Yoga Areas', 'Jogging & Cycle Track',
+      'Clubhouse', 'Party Hall', 'Amphitheater', 'Indoor Games',
+      'Reflexology Path', 'Open Air Theatre', 'Community Party Lawn',
+      '24x7 Security', 'CCTV Surveillance', 'Power Backup', 'Fire Fighting Systems'
+    ],
+    description: 'Designed by Padma Bhushan architect Hafeez Contractor, this independent floor development offers premium living amidst the Aravalli Hills with classical-themed gardens and excellent connectivity.',
+    image: 'https://images.unsplash.com/photo-1600573472592-401b489a3cdc?auto=format&fit=crop&w=1200&q=80',
+    detailPage: 'project-signature-global-park.html'
+  },
+  {
+    id: 'm3m-urbana',
+    name: 'M3M Urbana Business Park',
+    developer: 'M3M',
+    developerExp: '12+ Years',
+    location: 'Sector 67, Golf Course Extension',
+    city: 'Gurugram',
+    type: 'Commercial',
+    config: 'Office Space',
+    sizeRange: '238 – 833 Sq. Ft.',
+    priceCr: 0.67,
+    priceLabel: '₹67.40 Lac onwards',
+    priceRange: '₹67.40 Lac – ₹1.33 Cr',
+    status: 'Ready to Move',
+    possession: 'Ready to Move',
+    totalUnits: null,
+    totalArea: '5.025 Acres',
+    rera: '347 OF 2017',
+    reraPortal: 'haryanarera.gov.in',
+    highlights: [
+      'Part of expansive 18-acre M3M Urbana development',
+      'Twin towers: G+10 and G+19 floor configurations',
+      'Designed by RSP Singapore',
+      'Rooftop cafes & observatory deck with 360° views',
+      '1.5 km from Golf Course Extension Road',
+      'Ready to move — immediate possession available'
+    ],
+    amenities: [
+      'High Speed Elevators', 'Power Backup', 'Restaurant', 'Cafe & Coffee Bar',
+      'Conference Room', 'High Street Retail', 'Food Court', 'Multi-Brand Retail',
+      '24x7 Security', 'CCTV Surveillance', 'Fire Fighting Systems',
+      'Smoke & Heat Sensors', 'Emergency Alarms', 'Central Park'
+    ],
+    description: 'A premium commercial development within the 18-acre M3M Urbana complex, offering office spaces designed by RSP Singapore with rooftop cafes and 360-degree observatory views.',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80',
+    detailPage: 'project-m3m-urbana.html'
+  },
+  {
+    id: 'sobha-crescent',
+    name: 'Sobha Crescent',
+    developer: 'Sobha',
+    developerExp: '24+ Years',
+    location: 'Sector 63A, Golf Course Extension',
+    city: 'Gurugram',
+    type: 'Apartment',
+    config: '2, 3 & 4 BHK',
+    sizeRange: '1,940 – 2,967 Sq. Ft.',
+    priceCr: 4.66,
+    priceLabel: '₹4.66 Cr onwards',
+    priceRange: '₹4.66 Cr – ₹7.12 Cr',
+    status: 'New Launch',
+    possession: 'March 2033',
+    totalUnits: 336,
+    totalArea: '11.99 Acres',
+    rera: 'GGM/1054/786/2026/26',
+    reraPortal: 'haryanarera.gov.in',
+    highlights: [
+      'Surrounded by Aravalli views',
+      'All residences planned as corner units',
+      'Premium double-glazed glass facade for insulation',
+      'Expansive balconies with panoramic views',
+      'Low density — only 28 units per acre',
+      '430m nature trail & 50m lap pool',
+      'Near NH-48, Cyber City, and Sohna'
+    ],
+    amenities: [
+      'Gymnasium', 'Swimming Pool', 'Kids Pool', 'Badminton Court',
+      'Yoga Areas', 'Jogging & Cycle Track', 'Table Tennis', 'Skating Rink',
+      'Gazebo', 'Power Backup', 'Pet Area', 'Lift', 'Party Lawn',
+      '24x7 Security', 'CCTV Surveillance', 'Intercom Facility',
+      'Party Hall', 'Indoor Games', 'Party Plaza with BBQ Deck',
+      'Floating Decks', 'Bio Pond', '430m Nature Trail',
+      'Central Plaza', 'Festive Lawn', 'Canopy Grove', 'Pet Park', 'Reflexology Walk'
+    ],
+    description: 'Premium corner-unit residences on 11.99 acres with Aravalli views, double-glazed glass facade, 430m nature trail, and a 50m lap pool. Only 28 units per acre for superior privacy.',
+    image: 'https://images.unsplash.com/photo-1600573472592-401b489a3cdc?auto=format&fit=crop&w=1200&q=80',
+    detailPage: 'project-sobha-crescent.html'
+  },
+  {
+    id: 'bptp-downtown-66',
+    name: 'BPTP Downtown 66',
+    developer: 'BPTP',
+    developerExp: '20+ Years',
+    location: 'Sector 66, Golf Course Extension',
+    city: 'Gurugram',
+    type: 'Apartment',
+    config: '3 & 4 BHK',
+    sizeRange: '2,600 – 3,400 Sq. Ft.',
+    priceCr: 5.59,
+    priceLabel: '₹5.59 Cr onwards',
+    priceRange: '₹5.59 Cr – ₹7.31 Cr',
+    status: 'New Launch',
+    possession: 'October 2032',
+    totalUnits: 592,
+    totalArea: '4.23 Acres',
+    rera: 'RC/REP/HARERA/GGM/802/534/2026/04',
+    reraPortal: 'haryanarera.gov.in',
+    highlights: [
+      'IGBC Platinum Pre-Certified (green building)',
+      'Only 4 exclusive residences per floor',
+      '~150m iconic tower with glass & metal facade',
+      '1.35 lakh sq. ft. of amenities & landscaped spaces',
+      'Wraparound balconies with panoramic views',
+      'Turkish Hammam, Salt Room, Vitality Pool',
+      'Padel Court, Pickleball, Rock Climbing Wall'
+    ],
+    amenities: [
+      'Gymnasium', 'Swimming Pool', 'Kids Pool', 'Badminton Court', 'Tennis Court',
+      'Basketball', 'Yoga Areas', 'Jogging & Cycle Track', 'Table Tennis',
+      'Snooker/Pool/Billiards', 'Power Backup', 'Lift',
+      '24x7 Security', 'CCTV Surveillance', 'Mini Theatre', 'Party Hall',
+      'Clubhouse', 'Indoor Games', 'Jacuzzi', 'Senior Citizen Area',
+      'Padel Court', 'Pickleball Courts', 'Squash Court', 'Rock Climbing Wall',
+      'Turkish Hammam', 'Sauna', 'Indoor Heated Pool', 'Salt Room',
+      'Ballroom & Banquet Hall', 'Business Centre', 'Sports Bar',
+      'Whiskey Lounge', 'Dance Studio', 'Robotics Lab', 'Music Studio'
+    ],
+    description: 'IGBC Platinum-certified ~150m luxury tower with only 4 residences per floor, Turkish Hammam, salt room, padel courts, and 1.35 lakh sq. ft. of amenity spaces on Golf Course Extension Road.',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80',
+    detailPage: 'project-bptp-downtown-66.html'
+  },
+  {
+    id: 'smart-world-natures-court',
+    name: 'Smart World Natures Court',
+    developer: 'Smart World Developers',
+    developerExp: '5+ Years',
+    location: 'Manesar Sector 9, Gurgaon',
+    city: 'Gurugram',
+    type: 'Apartment',
+    config: '1 & 2 BHK',
+    sizeRange: '1,005 – 1,360 Sq. Ft.',
+    priceCr: 1.41,
+    priceLabel: '₹1.41 Cr onwards',
+    priceRange: '₹1.41 Cr – ₹1.90 Cr',
+    status: 'New Launch',
+    possession: 'December 2033',
+    totalUnits: 1214,
+    totalArea: '8.2 Acres',
+    rera: 'GGM/1029/761/2026/01',
+    reraPortal: 'haryanarera.gov.in',
+    highlights: [
+      'Part of 150-acre Gurgaon International City township',
+      'Sports and wellbeing-themed residential community',
+      'High-rise homes with open views',
+      '1 km from Western Peripheral Expressway',
+      'Near Cyberwalk (1.9 km) and Maruti Suzuki (2.2 km)',
+      'Direct NH-48 access',
+      'Compact smart homes for working professionals'
+    ],
+    amenities: [
+      'Gymnasium', 'Swimming Pool', 'Badminton Court', 'Squash Court',
+      'Football', 'Cricket', 'Kids Play Areas', 'Yoga Areas',
+      'Jogging & Cycle Track', 'Power Backup', 'Restaurant', 'Lift',
+      'Party Lawn', '24x7 Security', 'CCTV Surveillance',
+      'Fire Fighting Systems', 'Intercom Facility',
+      'Mini Theatre', 'Party Hall', 'Clubhouse', 'Indoor Games', 'Spa', 'Jacuzzi'
+    ],
+    description: 'Sports and wellness-themed compact homes in the 150-acre Gurgaon International City township, with direct NH-48 access and proximity to Cyberwalk & Maruti Suzuki.',
+    image: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1200&q=80',
+    detailPage: 'project-smart-world-natures-court.html'
+  }
+];
+
+/* Export for use in pages */
+if (typeof module !== 'undefined') module.exports = PROJECTS;
