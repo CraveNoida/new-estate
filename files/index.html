@@ -68,11 +68,10 @@
 
 /* 2. BASE ------------------------------------------------------ */
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{
   margin:0;font-family:var(--font-body);font-weight:300;font-size:1rem;line-height:1.7;
-  color:var(--on-dark);background:var(--charcoal);overflow-x:clip;-webkit-font-smoothing:antialiased;
-  max-width:100vw;
+  color:var(--on-dark);background:var(--charcoal);overflow-x:hidden;-webkit-font-smoothing:antialiased;
 }
 /* subtle film grain over the whole page */
 body::after{
@@ -109,7 +108,7 @@ dl,dd,p,h1,h2,h3,figure{margin:0}
 em.serif{font-family:var(--font-display);font-style:italic;font-weight:400}
 
 /* 4. LAYOUT ---------------------------------------------------- */
-.container{width:min(100% - var(--gutter)*2,var(--container));margin-inline:auto;box-sizing:border-box}
+.container{width:min(100% - var(--gutter)*2,var(--container));margin-inline:auto}
 .section{padding-block:var(--section);position:relative}
 .section--ivory{background:var(--ivory);color:var(--on-light)}
 .section--ivory .eyebrow{color:var(--gold-deep)}
@@ -152,9 +151,10 @@ em.serif{font-family:var(--font-display);font-style:italic;font-weight:400}
 .nav.is-scrolled{padding-block:14px;background:rgba(11,11,11,.72);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);border-bottom-color:var(--line-dark)}
 .nav__inner{display:flex;align-items:center;gap:40px}
 .nav__brand{display:inline-flex;align-items:center;gap:14px;margin-right:auto}
-.nav__logo{height:44px;width:auto;display:block;object-fit:contain;filter:brightness(1.1)}
-/* keep old .nav__mark fallback hidden */
-.nav__mark,.nav__name{display:none}
+.nav__mark{position:relative;width:14px;height:14px}
+.nav__mark::before,.nav__mark::after{content:"";position:absolute;inset:0;border:1px solid var(--gold);transform:rotate(45deg)}
+.nav__mark::after{inset:4px;background:var(--gold);border:0}
+.nav__name{font-family:var(--font-display);font-weight:500;font-size:1.2rem;letter-spacing:.22em;text-transform:uppercase}
 .nav__links{display:flex;gap:36px}
 .nav__link{position:relative;font-size:.76rem;font-weight:500;letter-spacing:.1em;color:var(--on-dark-2);padding-block:6px;transition:color var(--t-fast)}
 .nav__link::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform var(--t-med)}
@@ -244,7 +244,7 @@ body.menu-open{overflow:hidden}
 .intro__stats dd{font-size:.86rem;color:var(--on-dark-2);line-height:1.55}
 
 /* 10. PROPERTIES ----------------------------------------------- */
-.properties{overflow:hidden;position:relative}
+.properties{overflow:hidden}
 .properties::before{content:"PROPERTIES";position:absolute;right:-.05em;top:.2em;font-family:var(--font-display);font-size:clamp(6rem,18vw,18rem);line-height:1;letter-spacing:.02em;color:rgba(17,17,17,.035);pointer-events:none;user-select:none}
 .filters{display:flex;flex-wrap:wrap;align-items:end;gap:18px;padding:24px 28px;border:1px solid var(--line-light);border-radius:var(--radius-lg);background:rgba(255,255,255,.5);margin-bottom:22px;position:relative}
 .filter{flex:1 1 180px}
@@ -289,7 +289,7 @@ body.menu-open{overflow:hidden}
 .properties__empty .btn{margin-top:26px}
 
 /* 11. GALLERY -------------------------------------------------- */
-.gallery{padding-block:var(--section);background:var(--charcoal);overflow:hidden}
+.gallery{padding-block:var(--section);background:var(--charcoal)}
 .gallery__head{text-align:center;max-width:64ch;margin:0 auto 64px}
 .gallery__head .h2{margin-bottom:18px}
 .gallery__head p{color:var(--on-dark-2);font-size:1.08rem}
@@ -350,7 +350,7 @@ body.menu-open{overflow:hidden}
 /* 15. MANIFESTO ------------------------------------------------ */
 .manifesto{position:relative;padding-block:clamp(130px,20vw,260px);overflow:hidden;isolation:isolate;text-align:center}
 .manifesto__bg{position:absolute;inset:-14% 0;z-index:-2;will-change:transform}
-.manifesto__bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.42)}
+.manifesto__bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.32)}
 .manifesto::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at center,rgba(11,11,11,.15),rgba(11,11,11,.88) 75%)}
 .manifesto__title{font-family:var(--font-display);font-weight:300;font-size:clamp(4.4rem,16vw,14rem);line-height:.9;letter-spacing:.02em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;margin-bottom:60px}
 .manifesto__line{display:block;overflow:hidden;padding:.04em .1em}
@@ -364,7 +364,7 @@ body.menu-open{overflow:hidden}
 /* 16. CTA ------------------------------------------------------ */
 .cta{position:relative;overflow:hidden;isolation:isolate}
 .cta__bg{position:absolute;inset:0;z-index:-2}
-.cta__bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.45)}
+.cta__bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.35)}
 .cta::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,var(--charcoal),rgba(11,11,11,.6) 40%,rgba(11,11,11,.6) 60%,var(--charcoal))}
 .cta__inner{text-align:center}
 .cta__title{font-family:var(--font-display);font-weight:300;font-size:clamp(2.6rem,5.5vw,5rem);line-height:1.02;margin-bottom:20px}
@@ -447,7 +447,6 @@ body.menu-open{overflow:hidden}
 }
 @media (max-width:600px){
   .hero__inner{padding-bottom:120px}
-  .hero__title{font-size:clamp(2.6rem,12vw,3.6rem)}
   .hero__actions .btn{flex:1 1 100%}
   .hero__scroll{left:var(--gutter);right:auto;bottom:34px}
   .hero__scroll i{height:40px}
@@ -465,29 +464,12 @@ body.menu-open{overflow:hidden}
   .form__row{grid-template-columns:1fr}
   .form__submit{justify-self:stretch}
   .cta__actions .btn{flex:1 1 100%}
-  .cta__title{font-size:clamp(1.8rem,7vw,2.6rem)}
   .footer__grid{grid-template-columns:1fr;gap:28px}
   .to-top{right:16px;bottom:16px}
-  .wa-fab{left:16px;bottom:16px}
   .gallery__grid{grid-template-columns:1fr 1fr;grid-auto-rows:140px;gap:10px}
   .gallery__item:nth-child(1){grid-column:span 2;grid-row:span 2}
   .gallery__item:nth-child(n+2){grid-column:span 1;grid-row:span 1}
-  .manifesto__title{font-size:clamp(3rem,12vw,4.4rem)}
   .manifesto__copy{padding:22px 16px}
-  .featured__panel{padding:24px 20px}
-  .featured__title{font-size:clamp(1.6rem,5.5vw,2.4rem)}
-  .featured__specs{grid-template-columns:1fr 1fr;gap:14px}
-  .section{padding-block:clamp(60px,10vw,96px)}
-  .section-head{margin-bottom:40px}
-  .h2{font-size:clamp(1.8rem,6vw,2.4rem)}
-}
-@media (max-width:380px){
-  .hero__title{font-size:2.2rem}
-  .hero__text{font-size:.92rem}
-  .hero__label{font-size:.62rem;letter-spacing:.22em}
-  .nav__name{font-size:1rem;letter-spacing:.14em}
-  .manifesto__title{font-size:2.4rem}
-  .btn{min-height:48px;padding:0 24px;font-size:.72rem}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -646,61 +628,10 @@ body.menu-open{overflow:hidden}
 /* 21.21 ADVANCED LIGHT ANIMATIONS & INTERACTIVE SPOTLIGHT */
 .scroll-progress{position:fixed;top:0;left:0;width:0%;height:3px;background:linear-gradient(90deg,#c9c9c9,#ffffff,#c9c9c9);z-index:101;pointer-events:none;box-shadow:0 0 10px rgba(201,201,201,.6);transition:width .1s linear}
 .property,.service,.featured__panel,.hero__card{position:relative;background-image:radial-gradient(circle 320px at var(--mouse-x, 50%) var(--mouse-y, 50%),rgba(255,255,255,.08),transparent 75%)}
-.hero__word{transition:filter .4s,text-shadow .4s}
-.hero__word:hover{filter:brightness(1.15);text-shadow:0 0 24px rgba(255,255,255,.35)}
-.hero__card{animation:fadeUp 1.2s var(--ease) 1.5s forwards,floatBreath 6s ease-in-out 2.8s infinite}
+.hero__word{background:linear-gradient(120deg,#f2f2f2 30%,#ffffff 50%,#c9c9c9 70%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;transition:filter .4s}
+.hero__word:hover{filter:drop-shadow(0 0 12px rgba(255,255,255,.4))}
+.hero__card{animation:floatBreath 6s ease-in-out infinite!important}
 @keyframes floatBreath{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-
-/* 22. ABOUT — BHASKAR RAWAT PROFILE ------------------------------ */
-.about{position:relative;overflow:hidden}
-.about__grid{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(48px,8vw,110px);align-items:start}
-.about__media{position:relative;padding-top:40px}
-.about__portrait{aspect-ratio:3/4;border-radius:var(--radius-lg);overflow:hidden;position:relative}
-.about__portrait img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
-.about__portrait:hover img{transform:scale(1.04)}
-.about__accent{position:absolute;left:-18px;top:18px;width:60%;height:60%;border:1px solid rgba(242,242,242,.25);pointer-events:none;z-index:-1}
-.about__title-tag{position:absolute;bottom:0;left:0;right:0;padding:22px 24px;background:linear-gradient(to top,rgba(11,11,11,.88),transparent);z-index:2}
-.about__title-tag h3{font-family:var(--font-display);font-size:1.5rem;font-weight:500;line-height:1.15;margin-bottom:2px}
-.about__title-tag span{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
-.about__markets{margin-top:32px;padding:28px;border:1px solid var(--line-dark);border-radius:var(--radius-lg)}
-.about__markets h4{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--on-dark-3);margin-bottom:14px;font-weight:500}
-.about__market-primary{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-size:1.3rem;font-weight:500;color:var(--gold-soft);margin-bottom:16px}
-.about__market-primary::before{content:"";width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
-.about__market-list{font-size:.88rem;color:var(--on-dark-2);line-height:1.8}
-.about__body .h2{margin-bottom:12px;max-width:18ch}
-.about__role{display:inline-block;font-family:var(--font-display);font-style:italic;font-size:1.35rem;color:var(--gold);margin-bottom:28px;padding-bottom:16px;border-bottom:1px solid var(--line-dark)}
-.about__bio{display:flex;flex-direction:column;gap:14px;margin-bottom:40px}
-.about__bio p{color:var(--on-dark-2);max-width:56ch;font-size:.98rem;line-height:1.75}
-.about__bio p:first-child{color:var(--on-dark);font-size:1.06rem}
-.about__bio p em{font-family:var(--font-display);font-style:italic;color:var(--gold-soft)}
-.about__philosophy{padding:28px 32px;border-left:2px solid var(--gold);background:rgba(242,242,242,.04);border-radius:0 var(--radius-lg) var(--radius-lg) 0;margin-bottom:40px}
-.about__philosophy p{font-family:var(--font-display);font-size:1.15rem;line-height:1.65;color:var(--on-dark);font-style:italic}
-.about__creds{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding-top:36px;border-top:1px solid var(--line-dark)}
-.about__cred{text-align:center;padding:20px 14px;border:1px solid var(--line-dark);border-radius:var(--radius-lg);transition:border-color var(--t-med),transform var(--t-med)}
-.about__cred:hover{border-color:var(--gold);transform:translateY(-4px)}
-.about__cred dt{font-family:var(--font-display);font-size:1.5rem;font-weight:500;color:var(--gold-soft);margin-bottom:6px;font-style:italic}
-.about__cred dd{font-size:.78rem;color:var(--on-dark-2);line-height:1.4;letter-spacing:.02em}
-.about__journey{margin-top:48px;padding-top:36px;border-top:1px solid var(--line-dark)}
-.about__journey h3{font-family:var(--font-display);font-size:1.6rem;font-weight:400;margin-bottom:18px;color:var(--on-dark)}
-.about__journey p{color:var(--on-dark-2);max-width:56ch;font-size:.96rem;line-height:1.75;margin-bottom:12px}
-.about__vision{display:flex;align-items:flex-start;gap:16px;margin-top:28px;padding:24px;background:rgba(242,242,242,.04);border-radius:var(--radius-lg);border:1px solid var(--line-dark)}
-.about__vision-icon{width:48px;height:48px;flex-shrink:0;display:flex;align-items:center;justify-content:center;border:1px solid var(--gold);border-radius:50%;color:var(--gold)}
-.about__vision-icon svg{width:22px;height:22px}
-.about__vision-text{flex:1}
-.about__vision-text strong{display:block;font-family:var(--font-display);font-size:1.1rem;font-weight:500;margin-bottom:4px;color:var(--on-dark)}
-.about__vision-text p{color:var(--on-dark-2);font-size:.92rem;line-height:1.6;margin:0}
-
-@media (max-width:900px){
-  .about__grid{grid-template-columns:1fr}
-  .about__media{max-width:420px}
-  .about__creds{grid-template-columns:repeat(2,1fr)}
-}
-@media (max-width:600px){
-  .about__creds{grid-template-columns:1fr;gap:14px}
-  .about__philosophy{padding:20px 22px}
-  .about__markets{padding:20px}
-  .about__role{font-size:1.15rem}
-}
 </style>
 </head>
 <body>
@@ -712,7 +643,8 @@ body.menu-open{overflow:hidden}
 <header class="nav" id="nav">
   <div class="nav__inner container">
     <a href="#home" class="nav__brand" aria-label="Conscious Realty — Home">
-      <img src="images/logo.jpeg" alt="Conscious Realty" class="nav__logo">
+      <span class="nav__mark" aria-hidden="true"></span>
+      <span class="nav__name">Conscious Realty</span>
     </a>
     <nav class="nav__links" aria-label="Primary">
       <a href="#home" class="nav__link is-active">Home</a>
@@ -790,87 +722,29 @@ body.menu-open{overflow:hidden}
 </div>
 
 <!-- INTRO -->
-<!-- ABOUT — BHASKAR RAWAT -->
-<section class="about section" id="about">
-  <div class="container about__grid">
-
-    <!-- LEFT: Portrait & Markets -->
-    <div class="about__media reveal reveal--left">
-      <span class="about__accent" aria-hidden="true"></span>
-      <div class="about__portrait img-frame">
-        <img src="images/intro_main_lounge.png" alt="Bhaskar Rawat — Founder, Conscious Realty" loading="lazy">
-        <div class="about__title-tag">
-          <h3>Bhaskar Rawat</h3>
-          <span>Founder &amp; Real Estate Advisor</span>
-        </div>
+<section class="intro section" id="about">
+  <div class="container intro__grid">
+    <div class="intro__media">
+      <span class="intro__frame" aria-hidden="true"></span>
+      <div class="intro__img-main img-frame reveal reveal--img">
+        <img src="images/intro_main_lounge.png" alt="Bright contemporary living room with floor-to-ceiling windows" fetchpriority="high">
       </div>
-
-      <div class="about__markets reveal reveal--d2">
-        <h4>Markets We Serve</h4>
-        <div class="about__market-primary">Gurugram &amp; Delhi NCR</div>
-        <p class="about__market-list">
-          <strong style="font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-dark-3);font-weight:500;display:block;margin-bottom:6px">Select Markets</strong>
-          Dubai &middot; Hyderabad &middot; Bengaluru &middot; Pune &middot; Chennai &middot; Kochi &middot; Bhiwadi &middot; Uttarakhand
-        </p>
+      <div class="intro__img-small img-frame reveal reveal--d2">
+        <img src="images/mountain_uttarakhand.png" alt="Warm, minimal interior detail with natural materials" loading="lazy">
       </div>
     </div>
 
-    <!-- RIGHT: Bio & Credentials -->
-    <div class="about__body">
-      <p class="eyebrow reveal">About the Founder</p>
-      <h2 class="h2 reveal reveal--d1">Trusted Real Estate Advisor</h2>
-      <p class="about__role reveal reveal--d2">15+ Years of Real Estate Leadership</p>
-
-      <div class="about__bio reveal reveal--d2">
-        <p>Bhaskar Rawat is a seasoned Real Estate Professional with over 15 years of experience across residential, commercial and investment real estate.</p>
-        <p>With extensive experience in the <em>Gurugram and Delhi NCR</em> markets, Bhaskar has also worked across Dubai, Hyderabad, Bengaluru, Pune, Chennai and Kochi, giving him a diverse understanding of real estate markets, evolving buyer preferences and investment opportunities.</p>
-        <p>His professional journey includes significant developer-side experience, along with expertise in property sales, investment advisory, residential and commercial real estate, and long-term client relationships.</p>
-      </div>
-
-      <div class="about__philosophy reveal reveal--d3">
-        <p>&ldquo;Real estate is not simply about buying or selling a property &mdash; it is about understanding a client's needs, evaluating the right opportunities and making informed decisions with clarity and awareness.&rdquo;</p>
-      </div>
-
-      <dl class="about__creds reveal reveal--d4" data-stagger>
-        <div class="about__cred">
-          <dt>15+</dt>
-          <dd>Years of Real Estate Experience</dd>
-        </div>
-        <div class="about__cred">
-          <dt>Dev</dt>
-          <dd>Developer-Side Experience</dd>
-        </div>
-        <div class="about__cred">
-          <dt>NCR</dt>
-          <dd>Gurugram &amp; Delhi NCR Expertise</dd>
-        </div>
-        <div class="about__cred">
-          <dt>8+</dt>
-          <dd>Indian &amp; International Markets</dd>
-        </div>
-        <div class="about__cred">
-          <dt>360&deg;</dt>
-          <dd>Residential, Commercial &amp; Investment Advisory</dd>
-        </div>
+    <div class="intro__body">
+      <p class="eyebrow reveal">Real estate, with intention</p>
+      <h2 class="h2 reveal reveal--d1">Your next address should feel like more than an address.</h2>
+      <p class="lead reveal reveal--d2">Conscious Realty helps you discover thoughtfully selected properties that fit the way you live today and the life you're building toward. We look beyond square footage — at light, neighbourhood, value and the quiet details that turn a property into a home you're proud of.</p>
+      <p class="reveal reveal--d3">Every recommendation is made with care, explained clearly, and shaped around your aspirations, not a sales target.</p>
+      <dl class="intro__stats reveal reveal--d4" data-stagger>
+        <div><dt>Trust</dt><dd>Built on transparent relationships</dd></div>
+        <div><dt>Vision</dt><dd>Focused on better living</dd></div>
+        <div><dt>Experience</dt><dd>Guiding every property decision</dd></div>
       </dl>
-
-      <div class="about__journey reveal">
-        <h3>A Mindful Approach to Real Estate</h3>
-        <p>Beyond real estate, Bhaskar has been on a personal journey of mindfulness, meditation and self-awareness. His practice includes Vipassana meditation, along with regular meditation, pranayama and yoga. These experiences have shaped his perspective on life and strengthened his belief in being more aware, disciplined, balanced and conscious in the decisions he makes.</p>
-        <p>This philosophy also reflects in his approach to real estate.</p>
-
-        <div class="about__vision">
-          <span class="about__vision-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2 2"/></svg>
-          </span>
-          <div class="about__vision-text">
-            <strong>The Conscious Realty Vision</strong>
-            <p>Through Conscious Realty, Bhaskar's vision is to create a more thoughtful and transparent real estate advisory experience, built on trust, integrity, knowledge and long-term value.</p>
-          </div>
-        </div>
-      </div>
     </div>
-
   </div>
 </section>
 
@@ -930,7 +804,7 @@ body.menu-open{overflow:hidden}
         <figcaption class="gallery__cap"><span>Material</span><b>Stone, oak, linen</b></figcaption>
       </figure>
       <figure class="gallery__item img-frame reveal reveal--d2">
-        <img src="images/gallery_quiet_bedroom.png" alt="Calm bedroom with soft neutral palette" loading="lazy">
+        <img src="images/hero_luxury_residence.png" alt="Calm bedroom with soft neutral palette" loading="lazy">
         <figcaption class="gallery__cap"><span>Quiet</span><b>Space to rest</b></figcaption>
       </figure>
       <figure class="gallery__item img-frame reveal reveal--d2">
@@ -1032,7 +906,7 @@ body.menu-open{overflow:hidden}
 <!-- MANIFESTO -->
 <section class="manifesto" id="manifesto">
   <div class="manifesto__bg img-frame" data-parallax aria-hidden="true">
-    <img src="images/manifesto_aerial.png" alt="" loading="lazy">
+    <img src="images/hero_luxury_residence.png" alt="" loading="lazy">
   </div>
   <div class="container">
     <h2 class="manifesto__title" aria-label="Dream. Live. Aware.">

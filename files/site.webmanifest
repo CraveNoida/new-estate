@@ -1,0 +1,12 @@
+{
+  "name": "Conscious Realty — Premium Real Estate Advisory",
+  "short_name": "Conscious Realty",
+  "description": "Personalised real estate advisory across Gurugram, Delhi NCR and select markets.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0b0b",
+  "theme_color": "#0b0b0b",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
